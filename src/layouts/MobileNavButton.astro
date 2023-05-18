@@ -1,0 +1,15 @@
+---
+import Icon from "../components/Icon.astro";
+---
+
+<button data-nav>
+  <Icon name="menu-hamburger" />
+</button>
+
+<script>
+  const navButton = document.querySelector("[data-nav]");
+
+  navButton?.addEventListener("click", () => {
+    document.body.classList.toggle("show-navigation");
+  });
+</script>

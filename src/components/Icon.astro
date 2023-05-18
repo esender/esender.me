@@ -1,0 +1,14 @@
+---
+import { Icon } from "astro-icon";
+
+export interface Props {
+  name: string;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+---
+
+<div class={"w-5 aspect-square " + className}>
+  <Icon pack="charm" name={name} />
+</div>

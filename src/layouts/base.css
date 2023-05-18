@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+  @apply underline underline-offset-2 decoration-2 decoration-neutral-400;
+}

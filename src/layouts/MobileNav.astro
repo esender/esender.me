@@ -1,0 +1,51 @@
+---
+import Icon from "../components/Icon.astro";
+---
+
+<div
+  class:list={[
+    "w-screen h-screen fixed inset-0",
+    "group-[.show-navigation]/body:flex group-[:not(.show-navigation)]/body:hidden",
+  ]}
+>
+  <div
+    class:list={[
+      "w-screen h-screen fixed",
+      "from-neutral-700 to-neutral-950 opacity-70 bg-gradient-to-b",
+    ]}
+    data-backdrop
+  >
+  </div>
+  <div
+    class="bg-white absolute rounded-tl-2xl shadow-md right-0 bottom-0 w-11/12"
+  >
+    <button class="absolute right-5 -translate-y-10" data-close>
+      <Icon name="cross" class="text-white" />
+    </button>
+    <nav class="flex flex-col p-5 gap-1">
+      <a href="/" class="text-xl">Home</a>
+      <a href="/" class="text-xl">Projects</a>
+      <a href="/" class="text-xl">Resume</a>
+      <a href="/" class="text-xl">Blog</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+  const backdrop = document.querySelector("[data-backdrop]");
+  const closeBtn = document.querySelector("[data-close]");
+
+  backdrop?.addEventListener("click", () => {
+    document.body.classList.remove("show-navigation");
+  });
+  closeBtn?.addEventListener("click", () => {
+    document.body.classList.remove("show-navigation");
+  });
+</script>
+<!-- <div class="flex-col">
+  <div class="grow bg-opacity-40 px-5 pt-4">
+    <div class="text-[1.375rem] font-bold text-white">
+      esender<span class="text-neutral-300 text-xl">.me</span>
+    </div>
+  </div>
+</div> -->
