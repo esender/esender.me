@@ -1,0 +1,74 @@
+---
+import Icon from "../../components/Icon.astro";
+---
+
+<div
+  class:list={["w-screen h-screen fixed inset-0 hidden"]}
+  data-nav="container"
+>
+  <div
+    class:list={[
+      "w-screen h-screen fixed",
+      "from-neutral-700 to-neutral-950 opacity-70 bg-gradient-to-b",
+    ]}
+    data-nav="backdrop"
+  >
+  </div>
+  <div
+    class="bg-white absolute rounded-tl-2xl shadow-md right-0 bottom-0 w-11/12"
+    data-nav="navigation"
+  >
+    <button class="absolute right-5 -translate-y-10" data-nav="close">
+      <Icon name="cross" class="text-white" />
+    </button>
+    <nav class="flex flex-col p-5 gap-1">
+      <a href="/" class="text-xl">Home</a>
+      <a href="/" class="text-xl">Projects</a>
+      <a href="/" class="text-xl">Resume</a>
+      <a href="/" class="text-xl">Blog</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+  const backdrop = document.querySelector("[data-backdrop]");
+  const closeBtn = document.querySelector("[data-close]");
+  const handleClose = () => {
+    // document.body.classList.remove("show-navigation");
+
+    animate2({
+      target: backdrop,
+      what: "opacity",
+      from: "70",
+      to: "0",
+    });
+  };
+
+  backdrop?.addEventListener("click", handleClose);
+  closeBtn?.addEventListener("click", handleClose);
+
+  type AnimateArgs = {
+    target: Element | null;
+    what: string;
+    from: string;
+    to: string;
+    duration?: number;
+  };
+
+  function animate2({ target, what, from, to, duration = 1000 }: AnimateArgs) {
+    if (!target) return;
+    const fromClass = `${what}-${from}`;
+    const toClass = `${what}-${to}`;
+    const baseClass = [`transition-${what}`, `duration-${duration}`];
+
+    target.classList.add(fromClass, ...baseClass);
+    requestAnimationFrame(() => {
+      target.classList.remove(fromClass);
+      target.classList.add(toClass);
+    });
+
+    target.addEventListener("transitionend", () => {
+      target.classList.remove(...baseClass);
+    });
+  }
+</script>
