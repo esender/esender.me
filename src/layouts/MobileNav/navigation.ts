@@ -14,6 +14,7 @@ const navButton = get("open");
 const navMenu = get("container");
 const closeButton = get("close");
 const backdrop = get("backdrop");
+const navigation = get("navigation");
 
 navButton.addEventListener("click", () => {
   navMenu.classList.remove("hidden");
