@@ -24,7 +24,9 @@ const { title } = Astro.props;
   <body>
     <div class="py-4 px-5 gap-y-16 min-h-screen flex flex-col">
       <Header />
-      <slot />
+      <main class="grow">
+        <slot />
+      </main>
       <Footer />
     </div>
     <MobileNav />

@@ -1,0 +1,23 @@
+---
+const { title, start_end_months, position, stack, description, points } =
+  Astro.props;
+---
+
+<div>
+  <h3>
+    {title}
+  </h3>
+  <span>{start_end_months}</span>
+  <span>{position}</span>
+  <span>{stack}</span>
+  {description?.map((paragraph: string) => <p>{paragraph}</p>)}
+  {
+    points && (
+      <ul>
+        {points?.map((point: string) => (
+          <li>{point}</li>
+        ))}
+      </ul>
+    )
+  }
+</div>

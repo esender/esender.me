@@ -1,0 +1,16 @@
+---
+import Company from "../components/about/Company.astro";
+import Layout from "../layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+
+const experience = await getCollection("work-experience");
+const companies = experience
+  .map((company) => company.data)
+  .sort((a, b) => b.order - a.order);
+---
+
+<Layout title="Welcome to Astro.">
+  <h2>Work Experience</h2>
+  {companies.map((company) => <Company {...company} />)}
+</Layout>

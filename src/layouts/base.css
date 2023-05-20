@@ -5,3 +5,42 @@
 a {
   @apply underline underline-offset-2 decoration-2 decoration-neutral-400;
 }
+
+h1 {
+  @apply text-3xl font-bold;
+  @apply mb-4;
+}
+
+h2 {
+  @apply text-2xl font-bold;
+  @apply mb-4;
+}
+
+h3 {
+  @apply text-xl font-bold;
+  @apply mb-4;
+}
+
+h4 {
+  @apply text-lg font-bold;
+  @apply mb-4;
+}
+
+h5 {
+  @apply text-base font-bold;
+  @apply mb-4;
+}
+
+h6 {
+  @apply text-sm font-bold;
+  @apply mb-4;
+}
+
+p:not(:last-child) {
+  @apply mb-4;
+}
+
+ul {
+  @apply list-disc;
+  @apply mb-4 ml-4
+}
