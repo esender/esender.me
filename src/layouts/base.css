@@ -3,8 +3,19 @@
 @tailwind utilities;
 
 a {
-  @apply underline underline-offset-2 decoration-2 decoration-neutral-400 transition-colors ease-in;
-  @apply hover:decoration-red-500 hover:text-red-700;
+  @apply underline underline-offset-2 decoration-2 decoration-neutral-400;
+}
+
+@keyframes roll-color {
+  50% {
+    @apply text-orange-500 decoration-orange-500
+  }
+  100% {
+    @apply text-red-600 decoration-red-600
+  }
+}
+a:not(.no-animation):hover {
+  animation: roll-color 300ms ease-in-out both;
 }
 
 h1 {
