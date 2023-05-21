@@ -5,9 +5,16 @@ import Navigation from "./Navigation.astro";
 <header class="flex justify-between items-center">
   <a
     href="/"
-    class:list={["text-[1.375rem] font-bold no-underline", "sm:text-2xl"]}
+    class:list={[
+      "text-[1.375rem] font-bold no-underline group duration-500 hover:text-red-600",
+      "sm:text-2xl",
+    ]}
   >
-    esender<span class:list={["text-neutral-300 text-xl"]}>.me</span>
+    esender<span
+      class:list={[
+        "text-slate-300 text-xl group-hover:text-red-300 duration-500 ease-in transition-colors",
+      ]}>.me</span
+    >
   </a>
   <Navigation />
 </header>
