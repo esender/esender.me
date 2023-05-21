@@ -1,0 +1,7 @@
+---
+const { class: className, as: Wrapper = "div" } = Astro.props;
+---
+
+<Wrapper class:list={["lg:w-10/12 lg:m-auto", className]}>
+  <slot />
+</Wrapper>

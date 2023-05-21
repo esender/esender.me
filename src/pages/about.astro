@@ -1,5 +1,6 @@
 ---
 import Company from "../components/about/Company.astro";
+import Content from "../layouts/Content.astro";
 import Layout from "../layouts/Layout.astro";
 
 import { getCollection } from "astro:content";
@@ -11,7 +12,9 @@ const companies = experience
 ---
 
 <Layout title="About Marat Abdulin">
-  <h1>About</h1>
-  <h2>Work Experience</h2>
-  {companies.map((company) => <Company {...company} />)}
+  <Content as="article">
+    <h1>About</h1>
+    <h2>Work Experience</h2>
+    {companies.map((company) => <Company {...company} />)}
+  </Content>
 </Layout>
