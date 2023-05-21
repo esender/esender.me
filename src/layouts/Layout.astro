@@ -21,9 +21,14 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div class="py-4 px-5 gap-y-16 min-h-screen flex flex-col">
+    <div
+      class:list={[
+        "py-4 px-5 gap-y-16 min-h-screen flex flex-col",
+        "sm:py-6 sm:px-12",
+      ]}
+    >
       <Header />
-      <main class="grow">
+      <main class:list={["grow"]}>
         <slot />
       </main>
       <Footer />

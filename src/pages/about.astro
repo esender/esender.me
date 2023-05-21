@@ -10,7 +10,8 @@ const companies = experience
   .sort((a, b) => b.order - a.order);
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="About Marat Abdulin">
+  <h1>About</h1>
   <h2>Work Experience</h2>
   {companies.map((company) => <Company {...company} />)}
 </Layout>
