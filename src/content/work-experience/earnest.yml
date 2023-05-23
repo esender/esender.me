@@ -1,8 +1,9 @@
 title: Earnest Inc
-start_end_months: January 2019 - December 2021 
+start_date: 2019-01-01
+end_date: 2021-12-01
 position: Software Engineer
 stack: 
-  - VanillaJS, Preact, Webpack, Jira, Optimizely, Wordpress
+  - VanillaJS, Preact, Webpack, Optimizely, Wordpress
 description:
   - Earnest is a technology-enabled fintech lender, that offers student loan refinancing and private student loans.
   - My role as front-end developer entails the following

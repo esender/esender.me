@@ -1,5 +1,6 @@
 title: Pitch Software GmbH
-start_end_months: January 2021 - December 2022
+start_date: 2021-01-01
+end_date: 2022-12-01
 position: Senior Software Engineer
 stack: 
   - ClojureScript, Re-frame, Reagent, React

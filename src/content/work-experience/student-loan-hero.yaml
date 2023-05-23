@@ -1,5 +1,6 @@
 title: Student Loan Hero Inc
-start_end_months: March 2018 — January 2019
+start_date: 2018-03-01
+end_date: 2019-01-01
 position: Front-end Engineer
 stack: 
   - React, VanillaJS, Webpack, Jira, Wordpress, CodeShip

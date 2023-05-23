@@ -5,7 +5,8 @@ const companies = defineCollection({
   type: "data",
   schema: z.object({
     title: z.string(),
-    start_end_months: z.string(),
+    start_date: z.date(),
+    end_date: z.date().optional(),
     position: z.string(),
     stack: z.array(z.string()),
     description: z.array(z.string()).optional(),

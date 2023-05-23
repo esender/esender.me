@@ -1,5 +1,6 @@
 title: Runtime LLC
-start_end_months: March 2016 — March 2018
+start_date: 2016-03-01
+end_date: 2018-03-01
 position: Front-end Engineer
 stack: 
   - React, Webpack, Jira, Gemini, Rspec, GitLab CI

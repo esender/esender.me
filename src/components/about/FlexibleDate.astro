@@ -1,0 +1,9 @@
+---
+const { month, year } = Astro.props;
+---
+
+<>
+  {month.slice(0, 3)}
+  <span class="hidden sm:inline">{month.slice(3)}</span>
+  {year}
+</>
