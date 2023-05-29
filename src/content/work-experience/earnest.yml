@@ -3,13 +3,8 @@ start_date: 2019-01-01
 end_date: 2021-12-01
 position: Software Engineer
 stack: 
-  - VanillaJS, Preact, Webpack, Optimizely, Wordpress
+  - JavaScript, Preact, Webpack, Optimizely
 description:
-  - Earnest is a technology-enabled fintech lender, that offers student loan refinancing and private student loans.
-  - My role as front-end developer entails the following
-points:
-  - Performing page speed optimizations, setting up split tests and configuring a development environment. As well as implementing front-end product features provided by a marketing team.
-  - Page speed optimizations, speed up page loading.
-  - Set up webpack configurations, improved development experience. Boosted building speed from 20+ up to less 1s on re-builds.
-  - Set up screenshot testing for the QA team.
+  - My responsibilities spanned various areas, including page speed optimizations that significantly improved load times. I was also instrumental in the setup of split tests and the configuration of a development environment. Part of my duties included working closely with the marketing team to put into effect front-end product features. 
+  - Notably, my work on webpack configurations resulted in a major boost in rebuild speeds, reducing them from over 20 seconds to less than one second. Furthermore, my efforts in establishing screenshot testing significantly aided the QA team's operations.
 order: 5

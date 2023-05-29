@@ -5,6 +5,7 @@ position: Senior Software Engineer
 stack: 
   - ClojureScript, Re-frame, Reagent, React
 description:
-  - Pitch is the modern presentation software built for teams.
-  - Performance is an important direction of work in Pitch. As the performance team, we are working on different parts of the system, carry out investigations, and finding out what we can do for a better user experience in the performance way. We share our knowledge with other teams and help them improve their codebase as well.
+  - As a Performance Team member, my role focused on enhancing system performance for a better user experience. We conducted system-wide investigations, developed internal tools for performance data measurement and collection, and addressed the root causes of performance issues. 
+  - Besides collaborating with product teams to improve their code performance and sharing our expertise, my role also extended to participating in company-wide engineering projects and working groups.
+  - I personally contributed to the documentation of our internal "Point of contact" approach framework.
 order: 6

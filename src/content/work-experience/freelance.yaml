@@ -3,5 +3,5 @@ start_date: 2008-01-01
 end_date: 2012-10-01
 position: Web Developer
 stack: 
-  - HTML, CSS, Joomla, PHPShop, jQuery
+  - HTML, CSS, jQuery, Joomla, PHPShop
 order: 1

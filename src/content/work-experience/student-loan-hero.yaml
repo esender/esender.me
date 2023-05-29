@@ -3,13 +3,8 @@ start_date: 2018-03-01
 end_date: 2019-01-01
 position: Front-end Engineer
 stack: 
-  - React, VanillaJS, Webpack, Jira, Wordpress, CodeShip
+  - React, JavaScript, Webpack
 description:
-  - Student Loan Hero is a company that provides guidance and various tools to manage student loans.
-  - My position involved implementing product design features, page speed optimizations and working on codebase quality.
-points:
-  - Sped up webpack building time.
-  - I was working on continuous refactoring of legacy codebase and managed to clean up critical parts of the system.
-  - Integrated a new building system that improved developer experience and increased the speed of releasing features.
-  - Worked closely with a separate remote engineering team to effectively complete knowledge transfer after SLH was acquired by LendingTree.
+  - I implemented product design features, optimized page speeds, and enhanced the quality of the codebase. I notably reduced webpack build times, conducted continuous refactoring of critical parts of the legacy system, and integrated a new build system, thus accelerating feature release and improving the developer experience. 
+  - I also collaborated with a remote engineering team to ensure smooth knowledge transfer following the acquisition of Student Loan Hero by LendingTree.
 order: 4
