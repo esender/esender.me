@@ -14,11 +14,27 @@ const companies = experience
 <Layout title="About Marat Abdulin">
   <Content as="article">
     <h1>About</h1>
-    <h2>Work Experience</h2>
-    <div class="flex flex-col gap-y-8 mb-16">
+    <p>
+      I am a seasoned software engineer based in Berlin, Germany. I have a
+      strong interest in tasks related to performance enhancement and interface
+      refinement. This comes from my belief that exceptional interfaces are
+      created through careful attention to detail.
+    </p>
+    <p>
+      When I'm not engaged in engineering tasks, I prioritize maintaining a
+      healthy lifestyle. This includes running and other outdoor workouts.
+      During my leisure time, I enjoy going on hiking and trekking expeditions.
+    </p>
+    <p>
+      In addition, I am passionate about street photography, a hobby that allows
+      me to capture the essence of everyday life. Despite time constraints, my
+      enthusiasm for learning and trying new experiences remains unchanged.
+    </p>
+    <h2 class="mt-6 md:mt-16">Work Experience</h2>
+    <div class="flex flex-col md:gap-4">
       {companies.map((company) => <Company {...company} />)}
     </div>
-    <h2>Education</h2>
+    <h2 class="mt-2">Education</h2>
     <div>
       <h3 class="mb-0">
         Kazan National Research Technical University named after A.N.Tupolev
