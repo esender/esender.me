@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type PostProps = CollectionEntry<"posts">["data"];
+interface Props extends PostProps {
+  slug: string;
+}
+
+const { title, date, category, published, description, slug }: PostProps =
+  Astro.props;
+---
+
+<article>
+  <h3 class="mb-0">
+    <a href={`/posts/${slug}`}>{title}</a>
+    {published ? "" : "(Draft)"}
+  </h3>
+  <div>
+    {
+      date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    }
+    {category}
+  </div>
+  {description}
+</article>

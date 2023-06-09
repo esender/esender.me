@@ -1,8 +1,9 @@
 ---
 import type { PaginateFunction } from "astro";
-import Layout from "../../layouts/Layout.astro";
-import Content from "../../layouts/Content.astro";
+import Layout from "@layouts/Layout.astro";
+import Content from "@layouts/Content.astro";
 import { CollectionEntry, getCollection } from "astro:content";
+import PostCard from "@components/posts/PostCard.astro";
 
 type Post = CollectionEntry<"posts">;
 
@@ -27,16 +28,19 @@ const title = `Blog${page.currentPage > 1 && ` / page ${page.currentPage}`}`;
 
 <Layout title={title}>
   <Content>
-    {
-      page.data.map((post: Post) => (
-        <div>
-          <h2 class="text-xl">{post.data.title}</h2>
-          {!post.data.published && <span>DRAFT</span>}
-          <a href={`/posts/${post.slug}`}>Read more</a>
-          <p>{post.body}</p>
-        </div>
-      ))
-    }
+    <p class="mb-12">
+      I can put here some good information about the blog. Like, hey, this is my
+      blog, and I write about things I am interested in. Photography,
+      programming, language learning, traveling. All the posts marked by
+      category, so you can easily find what you are looking for.
+    </p>
+    <div class="flex flex-col gap-y-6 md:gap-y-10">
+      {
+        page.data.map((post: Post) => (
+          <PostCard {...post.data} slug={post.slug} />
+        ))
+      }
+    </div>
     {page.url.next && <a href={page.url.next}>Next Page</a>}
     {page.url.prev && <a href={page.url.prev}>Prev Page</a>}
   </Content>

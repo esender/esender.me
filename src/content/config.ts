@@ -21,6 +21,7 @@ const posts = defineCollection({
     category: z.enum(["photography", "development"]),
     published: z.boolean().optional().default(false),
     date: z.date(),
+    description: z.string(),
   }),
 });
 
