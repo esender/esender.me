@@ -18,8 +18,9 @@ const posts = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    category: z.union([z.literal("photography"), z.literal("development")]),
+    category: z.enum(["photography", "development"]),
     published: z.boolean().optional().default(false),
+    date: z.date(),
   }),
 });
 

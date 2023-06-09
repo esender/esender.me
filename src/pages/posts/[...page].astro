@@ -1,0 +1,41 @@
+---
+import type { PaginateFunction } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import Content from "../../layouts/Content.astro";
+import { CollectionEntry, getCollection } from "astro:content";
+
+type Post = CollectionEntry<"posts">;
+
+export async function getStaticPaths({
+  paginate,
+}: {
+  paginate: PaginateFunction;
+}) {
+  const posts = await getCollection("posts", (post) =>
+    import.meta.env.DEV ? true : post.data.published
+  );
+
+  posts.sort((a, b) => +b.data.date - +a.data.date);
+
+  return paginate(posts, { pageSize: 10 });
+}
+
+const { page } = Astro.props;
+---
+
+<Layout title="About Marat Abdulin">
+  <Content>
+    {
+      page.data.map((post: Post) => (
+        <div>
+          <h2 class="text-xl">{post.data.title}</h2>
+          {!post.data.published && <span>DRAFT</span>}
+          <a href={`/posts/${post.slug}`}>Read more</a>
+          <p>{post.body}</p>
+        </div>
+      ))
+    }
+    {page.url.next && <a href={page.url.next}>Next Page</a>}
+    {page.url.prev && <a href={page.url.prev}>Prev Page</a>}
+  </Content>
+</Layout>
