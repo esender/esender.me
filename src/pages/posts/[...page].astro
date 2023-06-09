@@ -21,9 +21,11 @@ export async function getStaticPaths({
 }
 
 const { page } = Astro.props;
+
+const title = `Blog${page.currentPage > 1 && ` / page ${page.currentPage}`}`;
 ---
 
-<Layout title="About Marat Abdulin">
+<Layout title={title}>
   <Content>
     {
       page.data.map((post: Post) => (
