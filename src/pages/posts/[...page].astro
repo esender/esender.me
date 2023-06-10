@@ -23,7 +23,8 @@ export async function getStaticPaths({
 
 const { page } = Astro.props;
 
-const title = `Blog${page.currentPage > 1 && ` / page ${page.currentPage}`}`;
+const postfix = page.currentPage <= 1 ? "" : ` / page ${page.currentPage}`;
+const title = `Blog${postfix}`;
 ---
 
 <Layout title={title}>
