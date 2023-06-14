@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scrollbar-gutter: stable;
+}
+
 a {
   @apply underline underline-offset-2 decoration-2 decoration-neutral-400 text-slate-800;
 }
