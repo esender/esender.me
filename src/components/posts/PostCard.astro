@@ -7,21 +7,16 @@ interface Props extends PostProps {
 }
 
 const { title, date, category, published, description, slug } = Astro.props;
+
+const formattedDate = date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
 ---
 
 <article class="grid grid-cols-12 gap-x-5">
-  <div
-    class="col-span-2 self-end uppercase text-sm font-medium text-right text-slate-600 pb-0.5"
-  >
-    {
-      date.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      })
-    }
-  </div>
-  <h2 class="mb-0 col-span-10 text-2xl">
+  <h2 class:list={["mb-0 col-span-full text-2xl", "sm:col-span-9 sm:order-2"]}>
     <a class="no-underline" href={`/posts/${slug}`}>{title}</a>
     {
       !published && (
@@ -31,11 +26,22 @@ const { title, date, category, published, description, slug } = Astro.props;
       )
     }
   </h2>
-
-  <div class="col-span-2 text-right uppercase text-sm pt-1">
-    <span class="text-slate-500">{category}</span>
+  <div
+    class:list={[
+      "col-span-full self-end uppercase text-xs text-slate-600 pb-1",
+      "sm:order-1 sm:col-span-3 sm:text-sm sm:text-right sm:pb-0.5 sm:row-span-2 sm:self-start",
+      "lg:col-span-2",
+    ]}
+  >
+    <div class:list={["inline", "sm:block sm:mt-2.5 sm:mb-1.5 sm:font-medium"]}>
+      {formattedDate}
+    </div>
+    <span class="sm:hidden"> /</span>
+    <span class="text-[13px]">{category}</span>
   </div>
-  <div class="col-span-10 text-slate-700">
+  <div
+    class:list={["col-span-full text-slate-700", "sm:col-span-9 sm:order-3"]}
+  >
     {description}
   </div>
 </article>
