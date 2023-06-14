@@ -29,11 +29,17 @@ const formattedDate = date.toLocaleDateString("en-US", {
   <div
     class:list={[
       "col-span-full self-end uppercase text-xs text-slate-600 pb-1",
-      "sm:order-1 sm:col-span-3 sm:text-sm sm:text-right sm:pb-0.5 sm:row-span-2 sm:self-start",
+      "sm:order-1 sm:col-span-3 sm:text-sm sm:text-right sm:pb-0 sm:row-span-2 sm:self-start",
       "lg:col-span-2",
     ]}
   >
-    <div class:list={["inline", "sm:block sm:mt-2.5 sm:mb-1.5 sm:font-medium"]}>
+    <div
+      class:list={[
+        "inline",
+        "sm:block sm:mt-2.5 sm:mb-1 sm:font-medium",
+        "lg:mb-1.5",
+      ]}
+    >
       {formattedDate}
     </div>
     <span class="sm:hidden"> /</span>
