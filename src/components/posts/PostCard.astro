@@ -9,9 +9,9 @@ interface Props extends PostProps {
 const { title, date, category, published, description, slug } = Astro.props;
 ---
 
-<article class="grid grid-cols-12 gap-x-6">
+<article class="grid grid-cols-12 gap-x-5">
   <div
-    class="col-span-2 self-center uppercase text-base font-medium text-right"
+    class="col-span-2 self-end uppercase text-sm font-medium text-right text-slate-600 pb-0.5"
   >
     {
       date.toLocaleDateString("en-US", {
@@ -23,11 +23,17 @@ const { title, date, category, published, description, slug } = Astro.props;
   </div>
   <h2 class="mb-0 col-span-10 text-2xl">
     <a class="no-underline" href={`/posts/${slug}`}>{title}</a>
-    <!-- {published ? "" : "(Draft)"} -->
+    {
+      !published && (
+        <span class="bg-slate-200 inline-block px-1.5 rounded text-slate-500 text-xs uppercase font-normal align-middle">
+          Draft
+        </span>
+      )
+    }
   </h2>
 
-  <div class="col-span-2 text-right">
-    {category}
+  <div class="col-span-2 text-right uppercase text-sm pt-1">
+    <span class="text-slate-500">{category}</span>
   </div>
   <div class="col-span-10 text-slate-700">
     {description}
