@@ -7,19 +7,20 @@ html {
 }
 
 a {
-  @apply underline underline-offset-2 decoration-2 decoration-neutral-400 text-slate-800;
+  @apply underline underline-offset-2 decoration-2 decoration-blue-300 text-slate-800 font-medium;
+  @apply transition-colors duration-200;
 }
 
-@keyframes roll-color {
-  50% {
-    @apply text-orange-500 decoration-orange-500
-  }
-  100% {
-    @apply text-red-600 decoration-red-600
-  }
+a:visited {
+  @apply decoration-violet-400 text-slate-600;
 }
+
+a:active {
+  @apply decoration-blue-500 text-slate-900;
+}
+
 a:not(.no-animation):hover {
-  animation: roll-color 300ms ease-in-out both;
+  @apply decoration-blue-400 text-blue-500;
 }
 
 h1, h2, h3, h4, h5, h6 {
