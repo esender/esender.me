@@ -1,0 +1,13 @@
+---
+const { children, href } = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={{
+    "no-underline text-slate-800 visited:text-slate-900 font-semibold":
+      Astro.url.pathname === href,
+  }}
+>
+  <slot />
+</a>
