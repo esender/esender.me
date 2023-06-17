@@ -9,6 +9,6 @@ const posts = await getCollection("posts", ({ data }) =>
 
 <nav class:list={["flex gap-4", "sm:gap-6", "md:gap-10"]}>
   <NavLink href="/">Home</NavLink>
-  {!!posts.length && <NavLink href="/posts">Blog</NavLink>}
-  <NavLink href="/about">About</NavLink>
+  {!!posts.length && <NavLink href="/posts/">Blog</NavLink>}
+  <NavLink href="/about/">About</NavLink>
 </nav>
