@@ -19,7 +19,7 @@ a:active {
   @apply decoration-blue-500 text-slate-900;
 }
 
-a:not(.no-animation):hover {
+a:not(.no-animation):is(:hover, :focus) {
   @apply decoration-blue-400 text-blue-500;
 }
 
