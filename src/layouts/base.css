@@ -120,3 +120,28 @@
   background-color: var(--color-accent);
   z-index: 9998;
 }
+
+/* Dark mode — override warm palette via system preference */
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-warm-50: #1a1a1a;
+    --color-warm-100: #222020;
+    --color-warm-200: #3d3b37;
+    --color-warm-300: #4a4743;
+    --color-warm-400: #7a766e;
+    --color-warm-500: #a39e94;
+    --color-warm-600: #c4bfb6;
+    --color-warm-700: #d4cec6;
+    --color-warm-800: #e8e4df;
+    --color-warm-900: #faf9f7;
+
+    --color-accent: #8fa382;
+    --color-accent-hover: #a3b396;
+    --color-accent-light: #6e8062;
+    --color-accent-muted: #4a5844;
+  }
+
+  .grain::before {
+    opacity: 0.02;
+  }
+}
