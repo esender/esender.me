@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Content from "@layouts/Content.astro";
+import MicroLabel from "@components/MicroLabel.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -12,12 +13,20 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content: Body, ...rest } = await entry.render();
+const { Content: Body } = await entry.render();
+
+const date = entry.data.date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "short",
+}).toUpperCase();
+const category = entry.data.category.toUpperCase();
 ---
 
 <Layout title={entry.data.title}>
   <Content as="article">
+    <MicroLabel>{category}<span class="mx-1.5">&middot;</span>{date}</MicroLabel>
     <h1>{entry.data.title}</h1>
+    <hr class="border-warm-200 mb-8 mt-2" />
     <Body />
   </Content>
 </Layout>

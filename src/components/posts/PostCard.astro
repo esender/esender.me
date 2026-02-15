@@ -10,50 +10,33 @@ const { title, date, category, published, description, slug } = Astro.props;
 
 const formattedDate = date.toLocaleDateString("en-US", {
   year: "numeric",
-  month: "long",
+  month: "short",
   day: "numeric",
 });
 ---
 
 <article
   class:list={[
-    "grid grid-cols-12 gap-x-5 py-4 -mx-4 px-4 rounded-lg",
-    "transition-all duration-300",
-    "hover:bg-warm-100 hover:shadow-sm",
+    "group relative py-5 pl-4 cursor-pointer",
+    "transition-all duration-200",
+    "hover:scale-[1.01] hover:bg-warm-100",
   ]}
 >
-  <h2 class:list={["mb-0 col-span-full text-2xl", "sm:col-span-9 sm:order-2"]}>
-    <a class="no-underline text-warm-900 hover:text-accent-hover no-animation transition-colors duration-300" href={`/posts/${slug}`}>{title}</a>
+  <a class="no-underline no-animation absolute inset-0" href={`/posts/${slug}`} tabindex="-1" aria-hidden="true" />
+  <div class="font-mono text-xs text-warm-400 mb-1.5 tracking-wide">
+    {formattedDate}<span class="mx-1.5">&middot;</span>{category}
     {
       !published && (
-        <span class="bg-warm-200 inline-block px-1.5 rounded text-warm-500 text-xs uppercase font-normal align-middle">
+        <span class="bg-warm-200 inline-block px-1.5 rounded text-warm-500 text-xs uppercase font-normal ml-2">
           Draft
         </span>
       )
     }
+  </div>
+  <h2 class="mb-1 text-xl font-bold tracking-tight">
+    <a class="no-underline text-warm-900 no-animation" href={`/posts/${slug}`}>{title}</a>
   </h2>
-  <div
-    class:list={[
-      "col-span-full self-end uppercase text-xs text-warm-500 pb-1",
-      "sm:order-1 sm:col-span-3 sm:text-sm sm:text-right sm:pb-0 sm:row-span-2 sm:self-start",
-      "lg:col-span-2",
-    ]}
-  >
-    <div
-      class:list={[
-        "inline",
-        "sm:block sm:mt-2.5 sm:mb-1 sm:font-medium",
-        "lg:mb-1.5",
-      ]}
-    >
-      {formattedDate}
-    </div>
-    <span class="sm:hidden"> /</span>
-    <span class="text-[13px]">{category}</span>
-  </div>
-  <div
-    class:list={["col-span-full text-warm-600", "sm:col-span-9 sm:order-3"]}
-  >
+  <p class="mb-0 text-warm-600 text-base">
     {description}
-  </div>
+  </p>
 </article>

@@ -2,7 +2,8 @@
 import type { PaginateFunction } from "astro";
 import Layout from "@layouts/Layout.astro";
 import Content from "@layouts/Content.astro";
-import { CollectionEntry, getCollection } from "astro:content";
+import MicroLabel from "@components/MicroLabel.astro";
+import { type CollectionEntry, getCollection } from "astro:content";
 import PostCard from "@components/posts/PostCard.astro";
 
 type Post = CollectionEntry<"posts">;
@@ -29,20 +30,19 @@ const title = `Blog${postfix}`;
 
 <Layout title={title}>
   <Content>
-    <p class="mb-12 md:w-11/12 md:mx-auto">
-      I can put here some good information about the blog. Like, hey, this is my
-      blog, and I write about things I am interested in. Photography,
-      programming, language learning, traveling. All the posts marked by
-      category, so you can easily find what you are looking for.
-    </p>
-    <div class="flex flex-col gap-y-6 md:gap-y-10">
+    <MicroLabel>Writing</MicroLabel>
+    <div class="flex flex-col divide-y divide-warm-200">
       {
         page.data.map((post: Post) => (
           <PostCard {...post.data} slug={post.slug} />
         ))
       }
     </div>
-    {page.url.next && <a href={page.url.next}>Next Page</a>}
-    {page.url.prev && <a href={page.url.prev}>Prev Page</a>}
+    {(page.url.next || page.url.prev) && (
+      <div class="flex justify-between mt-8 font-mono text-sm text-warm-500">
+        {page.url.prev ? <a href={page.url.prev}>&larr; Prev</a> : <span />}
+        {page.url.next && <a href={page.url.next}>Next &rarr;</a>}
+      </div>
+    )}
   </Content>
 </Layout>

@@ -16,10 +16,14 @@
   --color-warm-800: #2d2926;
   --color-warm-900: #1a1a1a;
 
-  --color-accent: #c47d5c;
-  --color-accent-hover: #a86648;
-  --color-accent-light: #d4a088;
-  --color-accent-muted: #e8c4b5;
+  --color-accent: #7a8c6e;
+  --color-accent-hover: #5e6d55;
+  --color-accent-light: #a3b396;
+  --color-accent-muted: #c4cebf;
+
+  --font-mono:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 html {
@@ -28,8 +32,8 @@ html {
 }
 
 a {
-  @apply underline underline-offset-2 decoration-2 decoration-accent-light text-warm-800 font-medium;
-  @apply transition-all duration-300;
+  @apply underline underline-offset-3 decoration-2 decoration-accent-light text-warm-800 font-medium;
+  @apply transition-all duration-200;
 }
 
 a:visited {
@@ -41,7 +45,7 @@ a:active {
 }
 
 a:not(.no-animation):is(:hover, :focus) {
-  @apply decoration-accent text-accent-hover;
+  @apply decoration-accent text-accent-hover tracking-[0.01em];
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -84,32 +88,6 @@ ul {
   @apply mb-4 ml-4;
 }
 
-/* Fade-up entrance animation */
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-up {
-  animation: fade-up 0.6s ease-out both;
-}
-
-/* Stagger delays for list items */
-.stagger-1 { animation-delay: 0.05s; }
-.stagger-2 { animation-delay: 0.1s; }
-.stagger-3 { animation-delay: 0.15s; }
-.stagger-4 { animation-delay: 0.2s; }
-.stagger-5 { animation-delay: 0.25s; }
-.stagger-6 { animation-delay: 0.3s; }
-.stagger-7 { animation-delay: 0.35s; }
-.stagger-8 { animation-delay: 0.4s; }
-
 /* Grain texture overlay */
 .grain::before {
   content: "";
@@ -124,4 +102,16 @@ ul {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
+}
+
+/* Fixed sage accent line at top of viewport */
+.accent-line::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+  z-index: 9998;
 }
