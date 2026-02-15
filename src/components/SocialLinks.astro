@@ -3,9 +3,10 @@ import Icon from "@components/Icon.astro";
 
 export interface Props {
   class?: string;
+  subtle?: boolean;
 }
 
-const { class: className } = Astro.props;
+const { class: className, subtle = false } = Astro.props;
 
 const links = [
   { name: "simple-icons:github", href: "https://github.com/esender", label: "GitHub" },
@@ -20,7 +21,7 @@ const links = [
       href={href}
       target={href.startsWith("mailto:") ? undefined : "_blank"}
       rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-      class="no-animation no-underline text-warm-400 hover:text-warm-600 transition-colors duration-200"
+      class:list={["no-animation no-underline transition-colors duration-200", subtle ? "text-warm-300 hover:text-warm-500" : "text-warm-400 hover:text-warm-600"]}
       aria-label={label}
     >
       <Icon name={name} size="1.25em" />
