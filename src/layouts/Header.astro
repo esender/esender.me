@@ -2,7 +2,7 @@
 import Navigation from "./Navigation.astro";
 ---
 
-<header class="flex justify-between items-center">
+<header class="flex justify-between items-center animate-fade-up">
   <a
     href="/"
     class:list={[
@@ -10,8 +10,9 @@ import Navigation from "./Navigation.astro";
       "sm:text-2xl",
       "lg:text-[1.7rem] lg:font-semibold",
       "no-animation",
-      "bg-gradient-to-r from-slate-950 to-slate-800 bg-clip-text text-transparent",
-      "hover:from-pink-600 hover:via-red-600 hover:to-yellow-500",
+      "text-warm-900 tracking-tight",
+      "transition-colors duration-300",
+      "hover:text-accent",
     ]}
   >
     esender.me

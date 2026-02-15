@@ -1,13 +1,18 @@
 ---
 const { children, href } = Astro.props;
+const isActive = Astro.url.pathname === href;
 ---
 
 <a
   href={href}
-  class:list={{
-    "no-underline text-slate-800 visited:text-slate-900 font-semibold":
-      Astro.url.pathname === href,
-  }}
+  class:list={[
+    "no-animation relative transition-colors duration-300",
+    {
+      "no-underline text-warm-900 font-semibold": isActive,
+      "no-underline text-warm-500 hover:text-warm-800 font-medium": !isActive,
+    },
+  ]}
 >
   <slot />
+  {isActive && <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-accent rounded-full" />}
 </a>

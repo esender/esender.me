@@ -13,17 +13,18 @@ const startDate = parseDate(start_date);
 const endDate = end_date && parseDate(end_date);
 ---
 
-<div>
+<div class="relative pl-6 border-l-2 border-warm-200">
+  <div class="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-accent border-2 border-warm-50"></div>
   <h3 class="mb-0">
     {title}
   </h3>
-  <div class="text-base text-slate-700">
-    <span class="font-medium">{position}</span>
+  <div class="text-base text-warm-600">
+    <span class="font-medium text-warm-700">{position}</span>
     / <FlexibleDate {...startDate} />
     -
     {endDate ? <FlexibleDate {...endDate} /> : "Present"}
   </div>
-  <div class="mb-4 text-base text-slate-500 last:mb-6">
+  <div class="mb-4 text-base text-warm-400 last:mb-6">
     {stack}
   </div>
   {description?.map((paragraph: string) => <p>{paragraph}</p>)}

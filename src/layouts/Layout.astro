@@ -1,5 +1,4 @@
 ---
-import "@fontsource-variable/inter";
 import "./base.css";
 import Header from "./Header.astro";
 import Footer from "./Footer.astro";
@@ -20,10 +19,16 @@ const { title } = Astro.props;
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-slate-50 text-slate-900 lg:text-lg">
+  <body class="bg-warm-50 text-warm-800 lg:text-lg grain">
     <div
       class:list={[
         "py-4 px-5 gap-y-16 min-h-screen flex flex-col max-w-6xl mx-auto",
@@ -32,7 +37,7 @@ const { title } = Astro.props;
       ]}
     >
       <Header />
-      <main class:list={["grow"]}>
+      <main class:list={["grow animate-fade-up"]}>
         <slot />
       </main>
       <Footer />

@@ -15,12 +15,18 @@ const formattedDate = date.toLocaleDateString("en-US", {
 });
 ---
 
-<article class="grid grid-cols-12 gap-x-5">
+<article
+  class:list={[
+    "grid grid-cols-12 gap-x-5 py-4 -mx-4 px-4 rounded-lg",
+    "transition-all duration-300",
+    "hover:bg-warm-100 hover:shadow-sm",
+  ]}
+>
   <h2 class:list={["mb-0 col-span-full text-2xl", "sm:col-span-9 sm:order-2"]}>
-    <a class="no-underline" href={`/posts/${slug}`}>{title}</a>
+    <a class="no-underline text-warm-900 hover:text-accent-hover no-animation transition-colors duration-300" href={`/posts/${slug}`}>{title}</a>
     {
       !published && (
-        <span class="bg-slate-200 inline-block px-1.5 rounded text-slate-500 text-xs uppercase font-normal align-middle">
+        <span class="bg-warm-200 inline-block px-1.5 rounded text-warm-500 text-xs uppercase font-normal align-middle">
           Draft
         </span>
       )
@@ -28,7 +34,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
   </h2>
   <div
     class:list={[
-      "col-span-full self-end uppercase text-xs text-slate-600 pb-1",
+      "col-span-full self-end uppercase text-xs text-warm-500 pb-1",
       "sm:order-1 sm:col-span-3 sm:text-sm sm:text-right sm:pb-0 sm:row-span-2 sm:self-start",
       "lg:col-span-2",
     ]}
@@ -46,7 +52,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
     <span class="text-[13px]">{category}</span>
   </div>
   <div
-    class:list={["col-span-full text-slate-700", "sm:col-span-9 sm:order-3"]}
+    class:list={["col-span-full text-warm-600", "sm:col-span-9 sm:order-3"]}
   >
     {description}
   </div>
