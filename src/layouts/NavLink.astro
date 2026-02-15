@@ -1,8 +1,9 @@
 ---
 const { href } = Astro.props;
-const isActive = href === '/'
-  ? Astro.url.pathname === '/'
-  : Astro.url.pathname.startsWith(href);
+const isActive =
+  href === "/"
+    ? Astro.url.pathname === "/"
+    : Astro.url.pathname.startsWith(href);
 ---
 
 <a

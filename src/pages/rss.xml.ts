@@ -9,7 +9,8 @@ export async function GET(context: APIContext) {
 
   return rss({
     title: "Marat Abdulin",
-    description: "Software engineer in Berlin. Writing about development and photography.",
+    description:
+      "Software engineer in Berlin. Writing about development and photography.",
     site: context.site!.toString(),
     items: posts.map((post) => ({
       title: post.data.title,

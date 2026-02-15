@@ -15,10 +15,12 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content: Body } = await entry.render();
 
-const date = entry.data.date.toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "short",
-}).toUpperCase();
+const date = entry.data.date
+  .toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+  })
+  .toUpperCase();
 const category = entry.data.category.toUpperCase();
 ---
 

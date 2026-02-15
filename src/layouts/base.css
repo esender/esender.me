@@ -52,7 +52,12 @@
     @apply decoration-accent text-accent-hover tracking-[0.01em];
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply text-warm-900 font-bold;
     @apply mb-6;
     letter-spacing: -0.02em;
