@@ -1,0 +1,7 @@
+---
+const { class: className } = Astro.props;
+---
+
+<span class:list={["block font-mono text-xs tracking-[0.15em] uppercase text-warm-400 mb-3", className]}>
+  <slot />
+</span>

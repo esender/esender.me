@@ -45,7 +45,7 @@ a:active {
 }
 
 a:not(.no-animation):is(:hover, :focus) {
-  @apply decoration-accent text-accent-hover;
+  @apply decoration-accent text-accent-hover tracking-[0.01em];
 }
 
 h1, h2, h3, h4, h5, h6 {
