@@ -2,6 +2,7 @@
 import Company from "../components/about/Company.astro";
 import Content from "../layouts/Content.astro";
 import Layout from "../layouts/Layout.astro";
+import MicroLabel from "../components/MicroLabel.astro";
 
 import { getCollection } from "astro:content";
 
@@ -13,7 +14,7 @@ const companies = experience
 
 <Layout title="About Marat Abdulin">
   <Content as="article">
-    <h1>About</h1>
+    <MicroLabel>About</MicroLabel>
     <p>
       I am a seasoned software engineer based in Berlin, Germany. I have a
       strong interest in tasks related to performance enhancement and interface
@@ -30,21 +31,22 @@ const companies = experience
       me to capture the essence of everyday life. Despite time constraints, my
       enthusiasm for learning and trying new experiences remains unchanged.
     </p>
-    <h2 class="mt-6 md:mt-16">Work Experience</h2>
-    <div class="flex flex-col md:gap-4">
+    <hr class="border-warm-200 my-8" />
+    <MicroLabel class="mb-6">Experience</MicroLabel>
+    <div class="flex flex-col divide-y divide-warm-200">
       {companies.map((company) => <Company {...company} />)}
     </div>
-    <h2 class="mt-2">Education</h2>
+    <hr class="border-warm-200 my-8" />
+    <MicroLabel class="mb-6">Education</MicroLabel>
     <div>
-      <h3 class="mb-0">
+      <h3 class="mb-0 text-lg">
         Kazan National Research Technical University named after A.N.Tupolev
       </h3>
-      <div class="text-base text-warm-600">
-        <span class="font-medium text-warm-700"
-          >Institute of radio-engineering and telecommunications</span
-        > / 2007 - 2011
+      <div class="text-sm text-warm-600 font-mono">
+        <span class="font-medium text-warm-700">Institute of radio-engineering and telecommunications</span>
+        <span class="mx-1.5">&middot;</span>2007 - 2011
       </div>
-      <div class="mb-4 last:mb-0 text-base text-warm-400">
+      <div class="mb-4 last:mb-0 text-sm text-warm-400 font-mono">
         Bachelor of Engineering and Technology
       </div>
     </div>
