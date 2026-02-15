@@ -18,9 +18,9 @@
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.43.0",
-    "@typescript-eslint/parser": ">=5.57.0",
-    "eslint": "^8.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.55.0",
+    "@typescript-eslint/parser": "^8.55.0",
+    "eslint": "^10.0.0",
     "eslint-config-standard-with-typescript": "^36.0.0",
     "eslint-config-xo": "^0.43.1",
     "eslint-config-xo-typescript": "^0.57.0",
@@ -28,8 +28,8 @@
     "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
-    "prettier": "^3.0.0",
-    "prettier-plugin-astro": "^0.10.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.9.3"
   },
   "packageManager": "yarn@1.22.19"
