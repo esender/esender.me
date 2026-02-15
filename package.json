@@ -16,13 +16,13 @@
   "dependencies": {
     "astro": "^5.17.2",
     "astro-icon": "^1.1.5",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/vite": "^4.1.13",
     "@astrojs/ts-plugin": "^1.10.6",
     "@biomejs/biome": "^2.3.15",
     "typescript": "^5.9.3"
   },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "npm@11.7.0"
 }
