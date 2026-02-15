@@ -18,9 +18,8 @@ const formattedDate = date.toLocaleDateString("en-US", {
 <article
   class:list={[
     "group relative py-5 pl-4 cursor-pointer",
-    "border-l-2 border-transparent",
-    "transition-[border-color] duration-200",
-    "hover:border-accent",
+    "transition-all duration-200",
+    "hover:scale-[1.01] hover:bg-warm-100",
   ]}
 >
   <a class="no-underline no-animation absolute inset-0" href={`/posts/${slug}`} tabindex="-1" aria-hidden="true" />
