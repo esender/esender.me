@@ -2,8 +2,11 @@ title: Earnest Inc
 start_date: 2019-01-01
 end_date: 2021-12-01
 position: Software Engineer
-stack: 
-  - JavaScript, Preact, Webpack, Optimizely
+stack:
+  - JavaScript
+  - Preact
+  - Webpack
+  - Optimizely
 description:
   - My responsibilities spanned various areas, including page speed optimizations that significantly improved load times. I was also instrumental in the setup of split tests and the configuration of a development environment. Part of my duties included working closely with the marketing team to put into effect front-end product features. 
   - Notably, my work on webpack configurations resulted in a major boost in rebuild speeds, reducing them from over 20 seconds to less than one second. Furthermore, my efforts in establishing screenshot testing significantly aided the QA team's operations.
