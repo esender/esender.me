@@ -4,7 +4,6 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "plugin:react/recommended",
     "standard-with-typescript",
     "plugin:prettier/recommended",
   ],
@@ -13,7 +12,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "prettier"],
+  plugins: ["prettier"],
   rules: {
     "prettier/prettier": "error",
   },
