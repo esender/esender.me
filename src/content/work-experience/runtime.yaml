@@ -2,8 +2,11 @@ title: Runtime LLC
 start_date: 2016-03-01
 end_date: 2018-03-01
 position: Front-end Engineer
-stack: 
-  - React, Webpack, GitLab CI, Gemini
+stack:
+  - React
+  - Webpack
+  - GitLab CI
+  - Gemini
 description:
   - I primarily contributed to "SitePokupok", a wholesale platform. I implemented new features from scratch using React, enhanced initial render times of complex components from 8 seconds to 1 second, and increased test coverage up to 85% using Jest and Gemini (now Hermione). I also migrated the building system to Webpack, improving the overall development process.
   - Beyond my main project, I offered bug fixes and front-end consultations for other company projects and mentored junior engineers.

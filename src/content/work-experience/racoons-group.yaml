@@ -2,8 +2,11 @@ title: Racoons Group LLC
 start_date: 2012-10-01
 end_date: 2015-12-01
 position: Full-Stack Engineer
-stack: 
-  - Ruby on Rails, AngularJS, Backbone, ExpressJS
+stack:
+  - Ruby on Rails
+  - AngularJS
+  - Backbone
+  - ExpressJS
 description:
   - I had the role of leading an engineering team that worked closely with one of the company's top clients. A key part of my job was to discuss technical questions with the product owner, review developers’ code, and make technical decisions.
 order: 2

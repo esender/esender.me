@@ -2,8 +2,11 @@ title: Pitch Software GmbH
 start_date: 2021-01-01
 end_date: 2022-12-01
 position: Senior Software Engineer
-stack: 
-  - ClojureScript, Re-frame, Reagent, React
+stack:
+  - ClojureScript
+  - Re-frame
+  - Reagent
+  - React
 description:
   - As a Performance Team member, my role focused on enhancing system performance for a better user experience. We conducted system-wide investigations, developed internal tools for performance data measurement and collection, and addressed the root causes of performance issues. 
   - Besides collaborating with product teams to improve their code performance and sharing our expertise, my role also extended to participating in company-wide engineering projects and working groups.

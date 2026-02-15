@@ -1,0 +1,29 @@
+---
+import Icon from "@components/Icon.astro";
+
+export interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
+const links = [
+  { name: "simple-icons:github", href: "https://github.com/esender", label: "GitHub" },
+  { name: "simple-icons:linkedin", href: "https://linkedin.com/in/marat-abdulin", label: "LinkedIn" },
+  { name: "lucide:mail", href: "mailto:hello@esender.me", label: "Email" },
+];
+---
+
+<div class:list={["flex items-center gap-4", className]}>
+  {links.map(({ name, href, label }) => (
+    <a
+      href={href}
+      target={href.startsWith("mailto:") ? undefined : "_blank"}
+      rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+      class="no-animation no-underline text-warm-400 hover:text-warm-600 transition-colors duration-200"
+      aria-label={label}
+    >
+      <Icon name={name} size="1.25em" />
+    </a>
+  ))}
+</div>

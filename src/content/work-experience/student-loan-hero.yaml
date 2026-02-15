@@ -2,8 +2,10 @@ title: Student Loan Hero Inc
 start_date: 2018-03-01
 end_date: 2019-01-01
 position: Front-end Engineer
-stack: 
-  - React, JavaScript, Webpack
+stack:
+  - React
+  - JavaScript
+  - Webpack
 description:
   - I implemented product design features, optimized page speeds, and enhanced the quality of the codebase. I notably reduced webpack build times, conducted continuous refactoring of critical parts of the legacy system, and integrated a new build system, thus accelerating feature release and improving the developer experience. 
   - I also collaborated with a remote engineering team to ensure smooth knowledge transfer following the acquisition of Student Loan Hero by LendingTree.

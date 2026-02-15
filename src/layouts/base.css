@@ -1,3 +1,6 @@
+@import "@fontsource-variable/outfit";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
 @import "tailwindcss";
 
 @theme {
@@ -26,66 +29,68 @@
     "Liberation Mono", "Courier New", monospace;
 }
 
-html {
-  scrollbar-gutter: stable;
-  scroll-behavior: smooth;
-}
+@layer base {
+  html {
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+  }
 
-a {
-  @apply underline underline-offset-3 decoration-2 decoration-accent-light text-warm-800 font-medium;
-  @apply transition-all duration-200;
-}
+  a {
+    @apply underline underline-offset-3 decoration-2 decoration-accent-light text-warm-800 font-medium;
+    @apply transition-all duration-200;
+  }
 
-a:visited {
-  @apply decoration-accent-muted text-warm-600;
-}
+  a:visited {
+    @apply decoration-accent-muted text-warm-600;
+  }
 
-a:active {
-  @apply decoration-accent-hover text-warm-900;
-}
+  a:active {
+    @apply decoration-accent-hover text-warm-900;
+  }
 
-a:not(.no-animation):is(:hover, :focus) {
-  @apply decoration-accent text-accent-hover tracking-[0.01em];
-}
+  a:not(.no-animation):is(:hover, :focus) {
+    @apply decoration-accent text-accent-hover tracking-[0.01em];
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply text-warm-900 font-bold;
-  @apply mb-6;
-  letter-spacing: -0.02em;
-}
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-warm-900 font-bold;
+    @apply mb-6;
+    letter-spacing: -0.02em;
+  }
 
-h1 {
-  @apply text-4xl font-bold;
-  letter-spacing: -0.03em;
-}
+  h1 {
+    @apply text-4xl font-bold;
+    letter-spacing: -0.03em;
+  }
 
-h2 {
-  @apply text-3xl;
-}
+  h2 {
+    @apply text-3xl;
+  }
 
-h3 {
-  @apply text-2xl;
-}
+  h3 {
+    @apply text-2xl;
+  }
 
-h4 {
-  @apply text-xl;
-}
+  h4 {
+    @apply text-xl;
+  }
 
-h5 {
-  @apply text-lg;
-}
+  h5 {
+    @apply text-lg;
+  }
 
-h6 {
-  @apply text-base;
-}
+  h6 {
+    @apply text-base;
+  }
 
-p {
-  @apply mb-4;
-}
+  p {
+    @apply mb-4;
+  }
 
-ul {
-  @apply list-disc;
-  @apply mb-4 ml-4;
+  ul {
+    @apply list-disc;
+    @apply mb-4 ml-4;
+  }
 }
 
 /* Grain texture overlay */
@@ -114,4 +119,29 @@ ul {
   height: 2px;
   background-color: var(--color-accent);
   z-index: 9998;
+}
+
+/* Dark mode — override warm palette via system preference */
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-warm-50: #1a1a1a;
+    --color-warm-100: #222020;
+    --color-warm-200: #3d3b37;
+    --color-warm-300: #4a4743;
+    --color-warm-400: #7a766e;
+    --color-warm-500: #a39e94;
+    --color-warm-600: #c4bfb6;
+    --color-warm-700: #d4cec6;
+    --color-warm-800: #e8e4df;
+    --color-warm-900: #faf9f7;
+
+    --color-accent: #8fa382;
+    --color-accent-hover: #a3b396;
+    --color-accent-light: #6e8062;
+    --color-accent-muted: #4a5844;
+  }
+
+  .grain::before {
+    opacity: 0.02;
+  }
 }
