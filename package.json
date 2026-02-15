@@ -14,6 +14,7 @@
     "check": "biome check --write ."
   },
   "dependencies": {
+    "@astrojs/rss": "^4.0.15",
     "@fontsource-variable/outfit": "^5.2.8",
     "@fontsource/jetbrains-mono": "^5.2.8",
     "@iconify-json/lucide": "^1.2.90",
