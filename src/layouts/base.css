@@ -8,21 +8,21 @@
     "Outfit", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-  --color-warm-50: #faf9f7;
-  --color-warm-100: #f5f3f0;
-  --color-warm-200: #e8e4df;
-  --color-warm-300: #d4cec6;
-  --color-warm-400: #a39e94;
-  --color-warm-500: #737068;
-  --color-warm-600: #5c5952;
-  --color-warm-700: #3d3b37;
-  --color-warm-800: #2d2926;
-  --color-warm-900: #1a1a1a;
+  --color-warm-50: #fffcf7;
+  --color-warm-100: #f6f4ec;
+  --color-warm-200: #eae8de;
+  --color-warm-300: #e4e3d7;
+  --color-warm-400: #babab0;
+  --color-warm-500: #818178;
+  --color-warm-600: #65655c;
+  --color-warm-700: #46453e;
+  --color-warm-800: #383831;
+  --color-warm-900: #1a1a17;
 
-  --color-accent: #7a8c6e;
-  --color-accent-hover: #5e6d55;
-  --color-accent-light: #a3b396;
-  --color-accent-muted: #c4cebf;
+  --color-accent: #506354;
+  --color-accent-hover: #445748;
+  --color-accent-light: #c5dac7;
+  --color-accent-muted: #d3e8d5;
 
   --font-mono:
     "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -129,21 +129,21 @@
 /* Dark mode — override warm palette via system preference */
 @media (prefers-color-scheme: dark) {
   @theme {
-    --color-warm-50: #1a1a1a;
-    --color-warm-100: #222020;
-    --color-warm-200: #3d3b37;
-    --color-warm-300: #4a4743;
-    --color-warm-400: #7a766e;
-    --color-warm-500: #a39e94;
-    --color-warm-600: #c4bfb6;
-    --color-warm-700: #d4cec6;
-    --color-warm-800: #e8e4df;
-    --color-warm-900: #faf9f7;
+    --color-warm-50: #1a1a17;
+    --color-warm-100: #1f1f1c;
+    --color-warm-200: #262622;
+    --color-warm-300: #33332f;
+    --color-warm-400: #4a4a44;
+    --color-warm-500: #818178;
+    --color-warm-600: #a3a19a;
+    --color-warm-700: #babab0;
+    --color-warm-800: #e6e2db;
+    --color-warm-900: #fffcf7;
 
-    --color-accent: #8fa382;
-    --color-accent-hover: #a3b396;
-    --color-accent-light: #6e8062;
-    --color-accent-muted: #4a5844;
+    --color-accent: #a8b5a1;
+    --color-accent-hover: #c5dac7;
+    --color-accent-light: #506354;
+    --color-accent-muted: #445748;
   }
 
   .grain::before {

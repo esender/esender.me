@@ -34,7 +34,7 @@ const title = `Blog${postfix}`;
     <div class="flex flex-col divide-y divide-warm-200">
       {
         page.data.map((post: Post) => (
-          <PostCard {...post.data} slug={post.slug} />
+          <PostCard {...post.data} slug={post.id} />
         ))
       }
     </div>

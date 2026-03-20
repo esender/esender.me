@@ -2,18 +2,18 @@
 import Layout from "@layouts/Layout.astro";
 import Content from "@layouts/Content.astro";
 import MicroLabel from "@components/MicroLabel.astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("posts");
   return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content: Body } = await entry.render();
+const { Content: Body } = await render(entry);
 
 const date = entry.data.date
   .toLocaleDateString("en-US", {
