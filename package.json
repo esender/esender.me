@@ -17,20 +17,20 @@
     "@astrojs/rss": "^4.0.17",
     "@fontsource-variable/outfit": "^5.2.8",
     "@fontsource/jetbrains-mono": "^5.2.8",
-    "@iconify-json/lucide": "^1.2.90",
-    "@iconify-json/simple-icons": "^1.2.70",
+    "@iconify-json/lucide": "^1.2.98",
+    "@iconify-json/simple-icons": "^1.2.74",
     "astro": "^6.0.8",
     "astro-icon": "^1.1.5",
-    "tailwindcss": "^4.1.13"
+    "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.10.7",
-    "@biomejs/biome": "^2.3.15",
-    "@tailwindcss/vite": "^4.1.13",
+    "@biomejs/biome": "^2.4.8",
+    "@tailwindcss/vite": "^4.2.2",
     "typescript": "^5.9.3"
   },
   "engines": {
     "node": ">=20.17.0"
   },
-  "packageManager": "npm@11.7.0"
+  "packageManager": "npm@11.12.0"
 }
