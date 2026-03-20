@@ -51,9 +51,11 @@ import PostCard from "@components/posts/PostCard.astro";
 ### Styling
 
 - **Tailwind CSS** with custom base styles in `src/layouts/base.css`
-- **Font**: Inter Variable (loaded via `@fontsource-variable/inter`)
+- **Fonts**: Manrope Variable (display/headlines) + IBM Plex Mono (labels/metadata)
+- **Design System**: See `DESIGN_SYSTEM.md` for the full design system (colors, typography, elevation, spacing, component rules)
 - Responsive breakpoints: mobile-first with `sm:`, `md:`, `lg:` prefixes
-- Custom link styles with underlines and color transitions
+- Warm neutral palette with sage accent, dark mode via `prefers-color-scheme`
+- Utility classes: `.glass`, `.ghost-border`, `.grain`, `.accent-line`, `.label-md`, `.label-sm`, `.text-display-lg`, `.text-headline-lg`
 
 ### Component Organization
 

@@ -17,13 +17,13 @@ const formattedDate = date.toLocaleDateString("en-US", {
 
 <article
   class:list={[
-    "group relative py-5 pl-4 cursor-pointer",
+    "group relative py-6 pl-4 cursor-pointer",
     "transition-all duration-200",
-    "hover:scale-[1.01] hover:bg-warm-100",
+    "hover:bg-surface-container",
   ]}
 >
   <a class="no-underline no-animation absolute inset-0" href={`/posts/${slug}`} tabindex="-1" aria-hidden="true" />
-  <div class="font-mono text-xs text-warm-400 mb-1.5 tracking-wide">
+  <div class="font-mono text-xs text-warm-400 mb-1.5 tracking-[0.1em]">
     {formattedDate}<span class="mx-1.5">&middot;</span>{category}
     {
       !published && (

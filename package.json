@@ -16,7 +16,7 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.17",
     "@fontsource-variable/manrope": "^5.2.8",
-    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/ibm-plex-mono": "^5.2.7",
     "@iconify-json/lucide": "^1.2.98",
     "@iconify-json/simple-icons": "^1.2.74",
     "astro": "^6.0.8",
