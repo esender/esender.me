@@ -1,30 +1,126 @@
 ---
-import Content from "../layouts/Content.astro";
 import Layout from "../layouts/Layout.astro";
 import MicroLabel from "../components/MicroLabel.astro";
-import SocialLinks from "@components/SocialLinks.astro";
+import { getCollection } from "astro:content";
+
+const posts = (
+  await getCollection("posts", ({ data }) =>
+    import.meta.env.DEV ? true : data.published
+  )
+)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 5);
 ---
 
 <Layout title="Marat Abdulin">
-  <Content class="md:mt-4">
-    <MicroLabel>Hello</MicroLabel>
-    <p class="text-3xl font-semibold pb-2">Hey there</p>
-    <p class="text-lg lg:text-xl leading-relaxed">
-      I'm Marat Abdulin, a software engineer currently bringing ideas to life at <a
-        href="https://taktile.com/">Taktile</a
-      > in Berlin. I'm all about those tiny details that transform a good interface
-      into an unforgettable one. Off the clock, I'm out capturing life through a
-      lens, chasing trails, or unwinding with video games.
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-5 sm:px-12 pt-20 pb-24 lg:pt-32 lg:pb-32">
+    <MicroLabel>Software Engineer — Berlin</MicroLabel>
+    <h1
+      class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-[1.1] mb-6 max-w-3xl"
+    >
+      Crafting <em class="not-italic text-accent">interfaces</em> that feel
+      just right
+    </h1>
+    <p class="text-lg lg:text-xl leading-relaxed text-warm-600 max-w-2xl">
+      I'm Marat Abdulin, a software engineer currently bringing ideas to life at
+      <a href="https://taktile.com/">Taktile</a>. I'm all about those tiny details
+      that transform a good interface into an unforgettable one. Off the clock, I'm
+      out capturing life through a lens, chasing trails, or unwinding with video games.
     </p>
-    <p class="text-lg lg:text-xl leading-relaxed">
-      Dive into my world, enjoy your stay, and don't hesitate to reach out!
-    </p>
-    <hr class="border-warm-200 my-8" />
-    <MicroLabel>Currently</MicroLabel>
-    <p class="text-base text-warm-600">
-      Building decision automation at <a href="https://taktile.com/">Taktile</a>. Focused on
-      interface details and developer experience.
-    </p>
-    <SocialLinks class="mt-4" />
-  </Content>
+  </section>
+
+  <!-- Selected Works -->
+  <section class="max-w-7xl mx-auto px-5 sm:px-12 pb-24 lg:pb-32">
+    <div class="flex justify-between items-baseline mb-10">
+      <div>
+        <MicroLabel>Portfolio</MicroLabel>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tighter mb-0">
+          Selected Works
+        </h2>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <div class="md:col-span-8 group">
+        <div class="bg-warm-200 rounded-2xl aspect-[16/10] mb-4 overflow-hidden transition-transform duration-300 group-hover:scale-[1.01]"></div>
+        <span class="font-mono text-xs uppercase tracking-[0.15em] text-warm-400">Design System</span>
+        <h3 class="text-xl font-bold tracking-tight mt-1 mb-0">Component Library</h3>
+      </div>
+      <div class="md:col-span-4 group">
+        <div class="bg-warm-300 rounded-2xl aspect-[4/3] mb-4 overflow-hidden transition-transform duration-300 group-hover:scale-[1.01]"></div>
+        <span class="font-mono text-xs uppercase tracking-[0.15em] text-warm-400">Developer Tools</span>
+        <h3 class="text-xl font-bold tracking-tight mt-1 mb-0">CLI Dashboard</h3>
+      </div>
+      <div class="md:col-span-4 group">
+        <div class="bg-accent-muted rounded-2xl aspect-[4/3] mb-4 overflow-hidden transition-transform duration-300 group-hover:scale-[1.01]"></div>
+        <span class="font-mono text-xs uppercase tracking-[0.15em] text-warm-400">Photography</span>
+        <h3 class="text-xl font-bold tracking-tight mt-1 mb-0">Berlin Streets</h3>
+      </div>
+      <div class="md:col-span-8 group">
+        <div class="bg-warm-200 rounded-2xl aspect-[16/10] mb-4 overflow-hidden transition-transform duration-300 group-hover:scale-[1.01]"></div>
+        <span class="font-mono text-xs uppercase tracking-[0.15em] text-warm-400">Web App</span>
+        <h3 class="text-xl font-bold tracking-tight mt-1 mb-0">Decision Engine UI</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Logbook -->
+  {posts.length > 0 && (
+    <section class="bg-warm-100 py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-5 sm:px-12">
+        <div class="flex justify-between items-baseline mb-10">
+          <div>
+            <MicroLabel>Writing</MicroLabel>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tighter mb-0">
+              The Logbook
+            </h2>
+          </div>
+          <a
+            href="/posts/"
+            class="no-underline no-animation text-sm font-mono uppercase tracking-[0.15em] text-warm-400 hover:text-warm-800 transition-colors"
+          >
+            View all &rarr;
+          </a>
+        </div>
+        <div class="divide-y divide-warm-200">
+          {posts.map((post, i) => (
+            <a
+              href={`/posts/${post.id}/`}
+              class="no-underline no-animation group flex items-baseline gap-4 sm:gap-6 py-5 transition-colors hover:text-accent"
+            >
+              <span class="font-mono text-sm text-warm-300 tabular-nums">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span class="font-bold text-lg sm:text-xl tracking-tight text-warm-800 group-hover:translate-x-1 transition-transform duration-200 flex-1">
+                {post.data.title}
+              </span>
+              <span class="hidden sm:inline font-mono text-xs uppercase tracking-[0.15em] text-warm-400">
+                {post.data.category}
+              </span>
+              <span class="font-mono text-xs text-warm-400 shrink-0">
+                {post.data.date.toLocaleDateString("en-US", {
+                  month: "short",
+                  year: "numeric",
+                })}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="max-w-7xl mx-auto px-5 sm:px-12 py-24 lg:py-32 text-center">
+    <MicroLabel class="justify-center">Get in Touch</MicroLabel>
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tighter mb-6 max-w-2xl mx-auto">
+      Let's build something <em class="not-italic text-accent">together</em>
+    </h2>
+    <a
+      href="mailto:marat@esender.me"
+      class="no-underline no-animation inline-block bg-accent text-warm-50 font-semibold px-8 py-3 rounded-full hover:bg-accent-hover transition-colors duration-200 text-base"
+    >
+      Say Hello
+    </a>
+  </section>
 </Layout>

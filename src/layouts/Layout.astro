@@ -27,13 +27,7 @@ const { title, description } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-warm-50 text-warm-800 lg:text-lg grain accent-line">
-    <div
-      class:list={[
-        "py-4 px-5 gap-y-16 min-h-screen flex flex-col max-w-6xl mx-auto",
-        "sm:py-6 sm:px-12",
-        "lg:gap-y-32",
-      ]}
-    >
+    <div class="min-h-screen flex flex-col">
       <Header />
       <main class="grow">
         <slot />
