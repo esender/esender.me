@@ -10,12 +10,20 @@ This is a personal website built with Astro, featuring blog posts and work exper
 
 **Development:**
 ```bash
-yarn dev          # Start dev server at localhost:3000
-yarn build        # Build production site to ./dist/
-yarn preview      # Preview production build locally
+npm run dev       # Start dev server at localhost:4321
+npm run build     # Build production site to ./dist/
+npm run preview   # Preview production build locally
 ```
 
-**Note:** This project uses `yarn` as the package manager (not npm).
+**Note:** This project uses `npm` as the package manager. Node >= 20.17.0 required.
+
+**Linting & Formatting (Biome):**
+```bash
+npm run lint      # Lint with Biome
+npm run lint:fix  # Lint and auto-fix
+npm run format    # Format with Biome
+npm run check     # Lint + format combined (auto-fix)
+```
 
 ## Architecture
 
@@ -29,7 +37,7 @@ The site uses Astro Content Collections with Zod schemas for type-safe content:
   - Stored as Markdown files (`.md`)
 
 - **`work-experience`** (`src/content/work-experience/`): Company data
-  - Schema: `title`, `start_date`, `end_date` (optional), `position`, `stack` (array), `description` (optional), `points` (optional), `order`
+  - Schema: `title`, `start_date`, `end_date` (optional), `position`, `stack` (array), `description` (optional, array of strings), `points` (optional), `order`
   - Stored as YAML files (`.yaml` or `.yml`)
   - Sorted by `order` field (descending)
 
@@ -47,6 +55,8 @@ import PostCard from "@components/posts/PostCard.astro";
 - **`src/pages/about.astro`**: About page with work experience timeline
 - **`src/pages/posts/[...page].astro`**: Blog listing with pagination (10 posts per page)
 - **`src/pages/posts/[...slug].astro`**: Individual blog post pages
+- **`src/pages/rss.xml.ts`**: RSS feed endpoint
+- **`src/pages/404.astro`**: Custom 404 page
 
 ### Styling
 
@@ -93,4 +103,3 @@ order: 7  # higher numbers appear first
 
 - Production builds go to `./dist/`
 - Static assets go in `./public/` (copied to dist root on build)
-- Experimental assets feature is enabled in `astro.config.mjs`
