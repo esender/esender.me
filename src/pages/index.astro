@@ -19,53 +19,56 @@ const posts = (
     <h1
       class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-[1.1] mb-6 max-w-3xl"
     >
-      Crafting <em class="not-italic text-primary">interfaces</em> that feel
-      just right
+      Building <em class="not-italic text-primary">interfaces</em> that disappear
+      into the experience
     </h1>
     <p class="text-lg lg:text-xl leading-relaxed text-warm-600 max-w-2xl">
-      I'm Marat Abdulin, a software engineer currently bringing ideas to life at
-      <a href="https://taktile.com/">Taktile</a>. I'm all about those tiny details
-      that transform a good interface into an unforgettable one. Off the clock, I'm
-      out capturing life through a lens, chasing trails, or unwinding with video games.
+      I'm Marat Abdulin, a software engineer at
+      <a href="https://taktile.com/">Taktile</a>. I believe the best interfaces are
+      the ones you don't notice — they just work, getting out of your way so you can
+      focus on what matters. Off the clock, I'm capturing life through a lens, chasing
+      trails, or exploring the latest AI tools.
     </p>
   </section>
 
   <!-- Selected Works -->
-  <section class="max-w-7xl mx-auto px-5 sm:px-12 pb-[5.5rem] lg:pb-[7rem]">
-    <div class="flex justify-between items-baseline mb-10">
-      <div>
-        <MicroLabel>Portfolio</MicroLabel>
-        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tighter mb-0">
-          Selected Works
-        </h2>
+  {import.meta.env.DEV && (
+    <section class="max-w-7xl mx-auto px-5 sm:px-12 pb-[5.5rem] lg:pb-[7rem]">
+      <div class="flex justify-between items-baseline mb-10">
+        <div>
+          <MicroLabel>Portfolio</MicroLabel>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tighter mb-0">
+            Selected Works
+          </h2>
+        </div>
       </div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-      <div class="md:col-span-8 group">
-        <div class="bg-warm-200 rounded-2xl aspect-[16/10] mb-4 overflow-hidden transition-transform duration-300"></div>
-        <span class="font-mono text-xs uppercase tracking-[0.1em] text-warm-400">Design System</span>
-        <h3 class="text-xl font-bold tracking-tight mt-1 mb-0">Component Library</h3>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div class="md:col-span-8 group">
+          <div class="bg-warm-200 rounded-2xl aspect-[16/10] mb-4 overflow-hidden transition-transform duration-300"></div>
+          <span class="font-mono text-xs uppercase tracking-[0.1em] text-warm-400">Design System</span>
+          <h3 class="text-xl font-bold tracking-tight mt-1 mb-0">Component Library</h3>
+        </div>
+        <div class="md:col-span-4 group">
+          <div class="bg-warm-300 rounded-2xl aspect-[4/3] mb-4 overflow-hidden transition-transform duration-300"></div>
+          <span class="font-mono text-xs uppercase tracking-[0.1em] text-warm-400">Developer Tools</span>
+          <h3 class="text-xl font-bold tracking-tight mt-1 mb-0">CLI Dashboard</h3>
+        </div>
+        <div class="md:col-span-4 group">
+          <div class="bg-accent-muted rounded-2xl aspect-[4/3] mb-4 overflow-hidden transition-transform duration-300"></div>
+          <span class="font-mono text-xs uppercase tracking-[0.1em] text-warm-400">Photography</span>
+          <h3 class="text-xl font-bold tracking-tight mt-1 mb-0">Berlin Streets</h3>
+        </div>
+        <div class="md:col-span-8 group">
+          <div class="bg-warm-200 rounded-2xl aspect-[16/10] mb-4 overflow-hidden transition-transform duration-300"></div>
+          <span class="font-mono text-xs uppercase tracking-[0.1em] text-warm-400">Web App</span>
+          <h3 class="text-xl font-bold tracking-tight mt-1 mb-0">Decision Engine UI</h3>
+        </div>
       </div>
-      <div class="md:col-span-4 group">
-        <div class="bg-warm-300 rounded-2xl aspect-[4/3] mb-4 overflow-hidden transition-transform duration-300"></div>
-        <span class="font-mono text-xs uppercase tracking-[0.1em] text-warm-400">Developer Tools</span>
-        <h3 class="text-xl font-bold tracking-tight mt-1 mb-0">CLI Dashboard</h3>
-      </div>
-      <div class="md:col-span-4 group">
-        <div class="bg-accent-muted rounded-2xl aspect-[4/3] mb-4 overflow-hidden transition-transform duration-300"></div>
-        <span class="font-mono text-xs uppercase tracking-[0.1em] text-warm-400">Photography</span>
-        <h3 class="text-xl font-bold tracking-tight mt-1 mb-0">Berlin Streets</h3>
-      </div>
-      <div class="md:col-span-8 group">
-        <div class="bg-warm-200 rounded-2xl aspect-[16/10] mb-4 overflow-hidden transition-transform duration-300"></div>
-        <span class="font-mono text-xs uppercase tracking-[0.1em] text-warm-400">Web App</span>
-        <h3 class="text-xl font-bold tracking-tight mt-1 mb-0">Decision Engine UI</h3>
-      </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- The Logbook -->
-  {posts.length > 0 && (
+  {import.meta.env.DEV && posts.length > 0 && (
     <section class="bg-surface-container py-[5.5rem] lg:py-[7rem]">
       <div class="max-w-7xl mx-auto px-5 sm:px-12">
         <div class="flex justify-between items-baseline mb-10">
