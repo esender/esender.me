@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MicroLabel from "../components/MicroLabel.astro";
+import SectionHeading from "../components/SectionHeading.astro";
 import { getCollection } from "astro:content";
 
 const posts = (
@@ -37,9 +38,9 @@ const posts = (
       <div class="flex justify-between items-baseline mb-10">
         <div>
           <MicroLabel>Portfolio</MicroLabel>
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tighter mb-0">
+          <SectionHeading>
             Selected Works
-          </h2>
+          </SectionHeading>
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
@@ -74,9 +75,9 @@ const posts = (
         <div class="flex justify-between items-baseline mb-10">
           <div>
             <MicroLabel>Writing</MicroLabel>
-            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tighter mb-0">
+            <SectionHeading>
               The Logbook
-            </h2>
+            </SectionHeading>
           </div>
           <a
             href="/posts/"
@@ -116,9 +117,9 @@ const posts = (
   <!-- CTA -->
   <section class="max-w-7xl mx-auto px-5 sm:px-12 lg:w-10/12 py-[5.5rem] lg:py-[7rem] text-center">
     <MicroLabel class="justify-center">Get in Touch</MicroLabel>
-    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tighter mb-6 max-w-2xl mx-auto">
+    <SectionHeading class="lg:text-5xl mb-6 max-w-2xl mx-auto">
       Let's build something <em class="not-italic text-primary">together</em>
-    </h2>
+    </SectionHeading>
     <a
       href="mailto:marat@esender.me"
       class="no-underline no-animation inline-block bg-primary text-on-primary font-semibold px-8 py-3 rounded-md hover:bg-primary/90 transition-colors duration-200 text-base"

@@ -1,47 +1,49 @@
 ---
-import FlexibleDate from "./FlexibleDate.astro";
-const { title, start_date, end_date, position, stack, description, points } =
+const { title, start_date, end_date, position, stack, description, points, isFirst } =
   Astro.props;
 
-const parseDate = (date: Date) => {
-  const month = date.toLocaleDateString("en-US", { month: "long" });
-  const year = date.toLocaleDateString("en-US", { year: "numeric" });
-  return { month, year };
-};
-
-const startDate = parseDate(start_date);
-const endDate = end_date && parseDate(end_date);
-const isCurrentRole = !end_date;
+const startYear = start_date.getFullYear();
+const endYear = end_date ? end_date.getFullYear() : "Present";
+const dateRange = `${startYear} — ${endYear}`;
 ---
 
-<div
-  class="group relative px-6 even:bg-surface-container-low rounded-xl py-6 first:pt-0 last:pb-0"
+<article
+  class:list={[
+    "group grid grid-cols-1 md:grid-cols-12 gap-8 items-start",
+    !isFirst && "border-t border-outline-variant/20 pt-24",
+  ]}
 >
-  <h3 class="mb-0 text-lg">{title}</h3>
-  <div class="font-mono text-sm text-warm-500 mb-1">
-    <span class="font-medium text-warm-600">{position}</span>
-    <span class="mx-1.5">&middot;</span>
-    <FlexibleDate {...startDate} /> - {
-      endDate ? <FlexibleDate {...endDate} /> : "Present"
+  <!-- Left column: dates & position -->
+  <div class="md:col-span-3 pt-2">
+    <div class="label-sm text-tertiary mb-1">{dateRange}</div>
+    <div class="label-sm text-primary font-bold">{position}</div>
+  </div>
+
+  <!-- Right column: company, description, stack -->
+  <div class="md:col-span-9">
+    <h3 class="font-bold text-2xl mb-6 group-hover:text-primary transition-colors">
+      {title}
+    </h3>
+    {
+      description?.map((paragraph: string) => (
+        <p class="text-on-surface-variant leading-relaxed text-lg max-w-2xl mb-4">
+          {paragraph}
+        </p>
+      ))
     }
+    {
+      points && (
+        <ul class="text-on-surface-variant text-lg max-w-2xl mb-4 list-disc list-inside">
+          {points?.map((point: string) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+      )
+    }
+    <div class="flex flex-wrap gap-6 mt-8">
+      {stack.map((tech: string) => (
+        <span class="label-sm text-outline">• {tech}</span>
+      ))}
+    </div>
   </div>
-  <div
-    class="mb-3 font-mono text-xs text-warm-400 tracking-wide transition-colors duration-200 group-hover:text-warm-600 last:mb-0"
-  >
-    {stack.join(" · ")}
-  </div>
-  {
-    description?.map((paragraph: string) => (
-      <p class="text-base">{paragraph}</p>
-    ))
-  }
-  {
-    points && (
-      <ul class="text-base">
-        {points?.map((point: string) => (
-          <li>{point}</li>
-        ))}
-      </ul>
-    )
-  }
-</div>
+</article>

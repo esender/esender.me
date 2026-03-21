@@ -1,7 +1,9 @@
 ---
 import Company from "../components/about/Company.astro";
-import Content from "../layouts/Content.astro";
 import Layout from "../layouts/Layout.astro";
+import Content from "../layouts/Content.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
 import MicroLabel from "../components/MicroLabel.astro";
 
 import { getCollection } from "astro:content";
@@ -13,40 +15,67 @@ const companies = experience
 ---
 
 <Layout title="About Marat Abdulin">
-  <Content as="article">
-    <MicroLabel>About</MicroLabel>
-    <p>
-      I am a seasoned software engineer based in Berlin, Germany. I have a
-      strong interest in tasks related to performance enhancement and interface
-      refinement. This comes from my belief that exceptional interfaces are
-      created through careful attention to detail.
-    </p>
-    <p>
-      When I'm not engaged in engineering tasks, I prioritize maintaining a
-      healthy lifestyle. This includes running and other outdoor workouts.
-      During my leisure time, I enjoy going on hiking and trekking expeditions.
-    </p>
-    <p>
-      In addition, I am passionate about street photography, a hobby that allows
-      me to capture the essence of everyday life. Despite time constraints, my
-      enthusiasm for learning and trying new experiences remains unchanged.
-    </p>
-    <MicroLabel class="mb-6 mt-16">Experience</MicroLabel>
-    <div class="flex flex-col">
-      {companies.map((company) => <Company {...company} />)}
-    </div>
-    <MicroLabel class="mb-6 mt-16">Education</MicroLabel>
-    <div>
-      <h3 class="mb-0 text-lg">
-        Kazan National Research Technical University named after A.N.Tupolev
-      </h3>
-      <div class="text-sm text-warm-600 font-mono">
-        <span class="font-medium text-warm-700">Institute of radio-engineering and telecommunications</span>
-        <span class="mx-1.5">&middot;</span>2007 - 2011
+  <Content>
+    <!-- Hero -->
+    <PageHero label="Curriculum Vitae" class="mb-48">
+      <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tighter leading-[0.95]">
+        Software Engineer.
+      </h1>
+      <div class="mt-12 max-w-2xl">
+        <p class="text-lg lg:text-xl text-on-surface-variant leading-relaxed">
+          I am a seasoned software engineer based in Berlin, Germany. I have a
+          strong interest in tasks related to performance enhancement and interface
+          refinement. This comes from my belief that exceptional interfaces are
+          created through careful attention to detail.
+        </p>
+        <p class="text-lg lg:text-xl text-on-surface-variant leading-relaxed mt-4">
+          When I'm not engaged in engineering tasks, I prioritize maintaining a
+          healthy lifestyle. This includes running and other outdoor workouts.
+          During my leisure time, I enjoy going on hiking and trekking expeditions.
+        </p>
       </div>
-      <div class="mb-4 last:mb-0 text-sm text-warm-400 font-mono">
-        Bachelor of Engineering and Technology
+      <span class="label-sm text-tertiary mt-8 block">Based in Berlin</span>
+    </PageHero>
+
+    <!-- Experience -->
+    <section class="mb-48">
+      <SectionHeading class="mb-20">Professional Experience</SectionHeading>
+      <div class="space-y-24">
+        {companies.map((company, index) => <Company {...company} isFirst={index === 0} />)}
       </div>
-    </div>
+    </section>
+
+    <!-- Education -->
+    <section class="mb-48">
+      <SectionHeading class="mb-20">Education</SectionHeading>
+      <div class="border-t border-outline-variant/20 pt-8 grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+        <div class="md:col-span-9">
+          <h3 class="font-bold text-2xl mb-1">Bachelor of Engineering and Technology</h3>
+          <p class="text-on-surface-variant text-lg">
+            Kazan National Research Technical University named after A.N.Tupolev
+          </p>
+          <p class="text-on-surface-variant/60 text-base">
+            Institute of Radio-Engineering and Telecommunications
+          </p>
+        </div>
+        <div class="md:col-span-3 md:text-right">
+          <span class="label-sm text-tertiary">2007 — 2011</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center">
+      <MicroLabel class="justify-center">Get in Touch</MicroLabel>
+      <SectionHeading class="lg:text-5xl mb-6 max-w-2xl mx-auto">
+        Have a project in <em class="not-italic text-primary">mind</em>?
+      </SectionHeading>
+      <a
+        href="mailto:marat@esender.me"
+        class="no-underline no-animation inline-block bg-primary text-on-primary font-semibold px-8 py-3 rounded-md hover:bg-primary/90 transition-colors duration-200 text-base"
+      >
+        Say Hello
+      </a>
+    </section>
   </Content>
 </Layout>

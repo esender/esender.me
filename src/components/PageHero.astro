@@ -1,0 +1,14 @@
+---
+import MicroLabel from "./MicroLabel.astro";
+
+interface Props {
+  label: string;
+  class?: string;
+}
+const { label, class: className } = Astro.props;
+---
+
+<section class:list={["mb-16 lg:mb-20", className]}>
+  <MicroLabel>{label}</MicroLabel>
+  <slot />
+</section>
