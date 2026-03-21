@@ -4,39 +4,59 @@ import type { CollectionEntry } from "astro:content";
 type PostProps = CollectionEntry<"posts">["data"];
 interface Props extends PostProps {
   slug: string;
+  index: number;
 }
 
-const { title, date, category, published, description, slug } = Astro.props;
+const { title, date, category, published, description, image, slug, index } = Astro.props;
 
 const formattedDate = date.toLocaleDateString("en-US", {
   year: "numeric",
   month: "short",
   day: "numeric",
-});
+}).toUpperCase();
+
+const isOdd = index % 2 !== 0;
 ---
 
 <article
   class:list={[
-    "group relative py-6 pl-4 cursor-pointer",
-    "transition-all duration-200",
-    "hover:bg-surface-container",
+    "group relative py-12 sm:py-16 cursor-pointer",
+    "transition-colors duration-200",
+    isOdd ? "bg-surface-container" : "bg-surface",
   ]}
 >
   <a class="no-underline no-animation absolute inset-0" href={`/posts/${slug}`} tabindex="-1" aria-hidden="true" />
-  <div class="font-mono text-xs text-warm-400 mb-1.5 tracking-[0.1em]">
-    {formattedDate}<span class="mx-1.5">&middot;</span>{category}
-    {
-      !published && (
-        <span class="bg-warm-200 inline-block px-1.5 rounded text-warm-500 text-xs uppercase font-normal ml-2">
-          Draft
-        </span>
-      )
-    }
+  <div class="max-w-5xl mx-auto px-6 sm:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div class="md:col-span-9">
+        <div class="flex items-center gap-2 text-warm-500 mb-1">
+          <span class="label-md">{formattedDate}</span>
+          <span class="label-md">/</span>
+          <span class="label-md text-primary font-bold">{category}</span>
+          {
+            !published && (
+              <span class="bg-warm-200 inline-block px-1.5 rounded text-warm-500 text-xs uppercase font-mono font-normal ml-2">
+                Draft
+              </span>
+            )
+          }
+        </div>
+        <h2 class="text-headline-lg text-warm-900 mb-3 group-hover:text-primary transition-colors duration-300">
+          <a class="no-underline text-warm-900 group-hover:text-primary no-animation" href={`/posts/${slug}`}>{title}</a>
+        </h2>
+        <p class="text-warm-600 text-base mb-6">
+          {description}
+        </p>
+        <a class="inline-flex items-center gap-2 label-md no-underline no-animation text-warm-900 group-hover:text-primary transition-colors duration-200" href={`/posts/${slug}`}>
+          Read Article
+          <span class="w-10 h-[1px] bg-primary group-hover:w-16 transition-all duration-500"></span>
+        </a>
+      </div>
+      <div class="md:col-span-3">
+        <div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-lg">
+          {image && <img src={image} alt={title} class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" />}
+        </div>
+      </div>
+    </div>
   </div>
-  <h2 class="mb-1 text-xl font-bold tracking-tight">
-    <a class="no-underline text-warm-900 no-animation" href={`/posts/${slug}`}>{title}</a>
-  </h2>
-  <p class="mb-0 text-warm-600 text-base">
-    {description}
-  </p>
 </article>

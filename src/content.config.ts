@@ -24,6 +24,7 @@ const posts = defineCollection({
     published: z.boolean().optional().default(false),
     date: z.date(),
     description: z.string(),
+    image: z.string().optional(),
   }),
 });
 

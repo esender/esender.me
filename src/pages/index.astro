@@ -14,7 +14,7 @@ const posts = (
 
 <Layout title="Marat Abdulin">
   <!-- Hero -->
-  <section class="max-w-7xl mx-auto px-5 sm:px-12 pt-28 pb-[5.5rem] lg:pt-[7rem] lg:pb-[7rem]">
+  <section class="max-w-7xl mx-auto px-5 sm:px-12 lg:w-10/12 pt-28 pb-[5.5rem] lg:pt-[7rem] lg:pb-[7rem]">
     <MicroLabel>Software Engineer — Berlin</MicroLabel>
     <h1
       class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-[1.1] mb-6 max-w-3xl"
@@ -33,7 +33,7 @@ const posts = (
 
   <!-- Selected Works -->
   {import.meta.env.DEV && (
-    <section class="max-w-7xl mx-auto px-5 sm:px-12 pb-[5.5rem] lg:pb-[7rem]">
+    <section class="max-w-7xl mx-auto px-5 sm:px-12 lg:w-10/12 pb-[5.5rem] lg:pb-[7rem]">
       <div class="flex justify-between items-baseline mb-10">
         <div>
           <MicroLabel>Portfolio</MicroLabel>
@@ -70,7 +70,7 @@ const posts = (
   <!-- The Logbook -->
   {import.meta.env.DEV && posts.length > 0 && (
     <section class="bg-surface-container py-[5.5rem] lg:py-[7rem]">
-      <div class="max-w-7xl mx-auto px-5 sm:px-12">
+      <div class="max-w-7xl mx-auto px-5 sm:px-12 lg:w-10/12">
         <div class="flex justify-between items-baseline mb-10">
           <div>
             <MicroLabel>Writing</MicroLabel>
@@ -114,7 +114,7 @@ const posts = (
   )}
 
   <!-- CTA -->
-  <section class="max-w-7xl mx-auto px-5 sm:px-12 py-[5.5rem] lg:py-[7rem] text-center">
+  <section class="max-w-7xl mx-auto px-5 sm:px-12 lg:w-10/12 py-[5.5rem] lg:py-[7rem] text-center">
     <MicroLabel class="justify-center">Get in Touch</MicroLabel>
     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tighter mb-6 max-w-2xl mx-auto">
       Let's build something <em class="not-italic text-primary">together</em>

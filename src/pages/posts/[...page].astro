@@ -30,11 +30,14 @@ const title = `Blog${postfix}`;
 
 <Layout title={title}>
   <Content>
-    <MicroLabel>Writing</MicroLabel>
-    <div class="flex flex-col gap-2">
+    <div class="mb-section">
+      <MicroLabel>Writing</MicroLabel>
+      <h1 class="text-display-lg text-warm-900 mt-4 mb-0 max-w-3xl">On engineering, photography, and the things that stick with me.</h1>
+    </div>
+    <div class="flex flex-col">
       {
-        page.data.map((post: Post) => (
-          <PostCard {...post.data} slug={post.id} />
+        page.data.map((post: Post, index: number) => (
+          <PostCard {...post.data} slug={post.id} index={index} />
         ))
       }
     </div>
