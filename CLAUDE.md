@@ -47,6 +47,7 @@ Import paths use these aliases (configured in `tsconfig.json`):
 ```ts
 import Layout from "@layouts/Layout.astro";
 import PostCard from "@components/posts/PostCard.astro";
+import { sortByDateDesc } from "@utils/date";
 ```
 
 ### Page Structure
@@ -73,6 +74,15 @@ import PostCard from "@components/posts/PostCard.astro";
 - **Components** (`src/components/`): Reusable UI components
   - `posts/`: Blog-related components
   - `about/`: About page components
+- **Utilities** (`src/utils/`): Shared helpers
+  - `date.ts`: Date formatting (`formatDateFull`, `formatDateShort`), sorting (`sortByDateDesc`), and constants (`CONTACT_EMAIL`)
+
+## Code Conventions
+
+- Always use path aliases (`@layouts/`, `@components/`, `@utils/`) instead of relative imports
+- `DESIGN_SYSTEM.md` is the source of truth for colors, typography, spacing, and border rules — no opaque borders, no pure black text
+- Biome auto-reorders imports when running `npm run check` — expect import order changes in diffs
+- Spacing tokens: `--spacing-section: 5.5rem`, `--spacing-section-lg: 7rem` — use `[5.5rem]`/`[7rem]` arbitrary values in Tailwind
 
 ## Content Schema Reference
 
