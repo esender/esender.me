@@ -1,6 +1,6 @@
 ---
-import NavLink from "@layouts/NavLink.astro";
 import { getCollection } from "astro:content";
+import NavLink from "@layouts/NavLink.astro";
 
 const posts = await getCollection("posts", ({ data }) =>
   import.meta.env.DEV ? true : data.published

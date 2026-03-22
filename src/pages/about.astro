@@ -1,12 +1,13 @@
 ---
-import Company from "../components/about/Company.astro";
-import Layout from "../layouts/Layout.astro";
-import Content from "../layouts/Content.astro";
-import PageHero from "../components/PageHero.astro";
-import SectionHeading from "../components/SectionHeading.astro";
-import MicroLabel from "../components/MicroLabel.astro";
-
 import { getCollection } from "astro:content";
+import Company from "@components/about/Company.astro";
+import CTAButton from "@components/CTAButton.astro";
+import MicroLabel from "@components/MicroLabel.astro";
+import PageHero from "@components/PageHero.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import Content from "@layouts/Content.astro";
+import Layout from "@layouts/Layout.astro";
+import { CONTACT_EMAIL } from "@utils/date";
 
 const experience = await getCollection("work-experience");
 const companies = experience
@@ -70,12 +71,9 @@ const companies = experience
       <SectionHeading class="lg:text-5xl mb-6 max-w-2xl mx-auto">
         Have a project in <em class="not-italic text-primary">mind</em>?
       </SectionHeading>
-      <a
-        href="mailto:marat@esender.me"
-        class="no-underline no-animation inline-block bg-primary text-on-primary font-semibold px-8 py-3 rounded-md hover:bg-primary/90 transition-colors duration-200 text-base"
-      >
+      <CTAButton href={`mailto:${CONTACT_EMAIL}`}>
         Say Hello
-      </a>
+      </CTAButton>
     </section>
   </Content>
 </Layout>

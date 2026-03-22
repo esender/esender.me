@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { formatDateFull } from "@utils/date";
 
 type PostProps = CollectionEntry<"posts">["data"];
 interface Props extends PostProps {
@@ -7,13 +8,10 @@ interface Props extends PostProps {
   index: number;
 }
 
-const { title, date, category, published, description, image, slug, index } = Astro.props;
+const { title, date, category, published, description, image, slug, index } =
+  Astro.props;
 
-const formattedDate = date.toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "short",
-  day: "numeric",
-}).toUpperCase();
+const formattedDate = formatDateFull(date);
 
 const isOdd = index % 2 !== 0;
 ---
@@ -35,7 +33,7 @@ const isOdd = index % 2 !== 0;
           <span class="label-md text-primary font-bold">{category}</span>
           {
             !published && (
-              <span class="bg-warm-200 inline-block px-1.5 rounded text-warm-500 text-xs uppercase font-mono font-normal ml-2">
+              <span class="bg-on-surface-variant/10 inline-block px-1.5 rounded text-on-surface-variant text-xs uppercase font-mono font-normal ml-2">
                 Draft
               </span>
             )

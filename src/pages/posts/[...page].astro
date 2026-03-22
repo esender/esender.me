@@ -1,10 +1,11 @@
 ---
-import type { PaginateFunction } from "astro";
-import Layout from "@layouts/Layout.astro";
-import Content from "@layouts/Content.astro";
-import MicroLabel from "@components/MicroLabel.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
+import MicroLabel from "@components/MicroLabel.astro";
 import PostCard from "@components/posts/PostCard.astro";
+import Content from "@layouts/Content.astro";
+import Layout from "@layouts/Layout.astro";
+import { sortByDateDesc } from "@utils/date";
+import type { PaginateFunction } from "astro";
 
 type Post = CollectionEntry<"posts">;
 
@@ -17,7 +18,7 @@ export async function getStaticPaths({
     import.meta.env.DEV ? true : post.data.published
   );
 
-  posts.sort((a, b) => +b.data.date - +a.data.date);
+  posts.sort(sortByDateDesc);
 
   return paginate(posts, { pageSize: 10 });
 }
@@ -30,7 +31,7 @@ const title = `Blog${postfix}`;
 
 <Layout title={title}>
   <Content>
-    <div class="mb-section">
+    <div class="mb-[5.5rem] lg:mb-[7rem]">
       <MicroLabel>Writing</MicroLabel>
       <h1 class="text-display-lg text-warm-900 mt-4 mb-0 max-w-3xl">On engineering, photography, and the things that stick with me</h1>
     </div>

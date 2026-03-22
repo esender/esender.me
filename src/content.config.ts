@@ -3,7 +3,10 @@ import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
 const companies = defineCollection({
-  loader: glob({ pattern: "**/*.{yaml,yml}", base: "./src/content/work-experience" }),
+  loader: glob({
+    pattern: "**/*.{yaml,yml}",
+    base: "./src/content/work-experience",
+  }),
   schema: z.object({
     title: z.string(),
     start_date: z.date(),

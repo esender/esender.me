@@ -1,15 +1,17 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import MicroLabel from "../components/MicroLabel.astro";
-import SectionHeading from "../components/SectionHeading.astro";
 import { getCollection } from "astro:content";
+import CTAButton from "@components/CTAButton.astro";
+import MicroLabel from "@components/MicroLabel.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import Layout from "@layouts/Layout.astro";
+import { CONTACT_EMAIL, formatDateShort, sortByDateDesc } from "@utils/date";
 
 const posts = (
   await getCollection("posts", ({ data }) =>
     import.meta.env.DEV ? true : data.published
   )
 )
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .sort(sortByDateDesc)
   .slice(0, 5);
 ---
 
@@ -102,10 +104,7 @@ const posts = (
                 {post.data.category}
               </span>
               <span class="font-mono text-xs text-warm-400 shrink-0">
-                {post.data.date.toLocaleDateString("en-US", {
-                  month: "short",
-                  year: "numeric",
-                })}
+                {formatDateShort(post.data.date)}
               </span>
             </a>
           ))}
@@ -120,11 +119,8 @@ const posts = (
     <SectionHeading class="lg:text-5xl mb-6 max-w-2xl mx-auto">
       Let's build something <em class="not-italic text-primary">together</em>
     </SectionHeading>
-    <a
-      href="mailto:marat@esender.me"
-      class="no-underline no-animation inline-block bg-primary text-on-primary font-semibold px-8 py-3 rounded-md hover:bg-primary/90 transition-colors duration-200 text-base"
-    >
+    <CTAButton href={`mailto:${CONTACT_EMAIL}`}>
       Say Hello
-    </a>
+    </CTAButton>
   </section>
 </Layout>

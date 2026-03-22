@@ -1,6 +1,14 @@
 ---
-const { title, start_date, end_date, position, stack, description, points, isFirst } =
-  Astro.props;
+const {
+  title,
+  start_date,
+  end_date,
+  position,
+  stack,
+  description,
+  points,
+  isFirst,
+} = Astro.props;
 
 const startYear = start_date.getFullYear();
 const endYear = end_date ? end_date.getFullYear() : "Present";
@@ -42,7 +50,7 @@ const dateRange = `${startYear} — ${endYear}`;
     }
     <div class="flex flex-wrap gap-6 mt-8">
       {stack.map((tech: string) => (
-        <span class="label-sm text-outline">• {tech}</span>
+        <span class="label-sm text-on-surface-variant">• {tech}</span>
       ))}
     </div>
   </div>

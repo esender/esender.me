@@ -1,11 +1,12 @@
-import rss from "@astrojs/rss";
-import type { APIContext } from "astro";
 import { getCollection } from "astro:content";
+import rss from "@astrojs/rss";
+import { sortByDateDesc } from "@utils/date";
+import type { APIContext } from "astro";
 
 export async function GET(context: APIContext) {
   const posts = await getCollection("posts", ({ data }) => data.published);
 
-  posts.sort((a, b) => +b.data.date - +a.data.date);
+  posts.sort(sortByDateDesc);
 
   return rss({
     title: "Marat Abdulin",

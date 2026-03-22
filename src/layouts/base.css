@@ -5,8 +5,8 @@
 
 @theme {
   --font-sans:
-    "Manrope Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    "Manrope Variable", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   --color-warm-50: #fffcf7;
   --color-warm-100: #f6f4ec;
@@ -156,13 +156,18 @@
 }
 
 .glass {
-  background-color: color-mix(in srgb, var(--color-surface-bright) 80%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--color-surface-bright) 80%,
+    transparent
+  );
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .ghost-border {
-  border: 1px solid color-mix(in srgb, var(--color-outline-variant) 15%, transparent);
+  border: 1px solid
+    color-mix(in srgb, var(--color-outline-variant) 15%, transparent);
 }
 
 /* Grain texture overlay */
