@@ -1,4 +1,15 @@
 ---
+interface Props {
+  title: string;
+  start_date: Date;
+  end_date?: Date;
+  position: string;
+  stack: string[];
+  description?: string[];
+  points?: string[];
+  isFirst: boolean;
+}
+
 const {
   title,
   start_date,
@@ -33,7 +44,7 @@ const dateRange = `${startYear} — ${endYear}`;
       {title}
     </h3>
     {
-      description?.map((paragraph: string) => (
+      description?.map((paragraph) => (
         <p class="text-on-surface-variant leading-relaxed text-lg max-w-2xl mb-4">
           {paragraph}
         </p>
@@ -42,14 +53,14 @@ const dateRange = `${startYear} — ${endYear}`;
     {
       points && (
         <ul class="text-on-surface-variant text-lg max-w-2xl mb-4 list-disc list-inside">
-          {points?.map((point: string) => (
+          {points?.map((point) => (
             <li>{point}</li>
           ))}
         </ul>
       )
     }
     <div class="flex flex-wrap gap-6 mt-8">
-      {stack.map((tech: string) => (
+      {stack.map((tech) => (
         <span class="label-sm text-on-surface-variant">• {tech}</span>
       ))}
     </div>
