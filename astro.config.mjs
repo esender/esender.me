@@ -8,5 +8,8 @@ export default defineConfig({
   integrations: [icon()],
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      exclude: ["sharp"],
+    },
   },
 });
