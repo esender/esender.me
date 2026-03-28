@@ -4,11 +4,14 @@ import CTAButton from "@components/CTAButton.astro";
 import MicroLabel from "@components/MicroLabel.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import Layout from "@layouts/Layout.astro";
-import { CONTACT_EMAIL, formatDateShort, isVisiblePost, sortByDateDesc } from "@utils/date";
+import { CONTACT_EMAIL } from "@utils/config";
+import {
+  formatDateShort,
+  isVisiblePost,
+  sortByDateDesc,
+} from "@utils/date";
 
-const posts = (
-  await getCollection("posts", isVisiblePost)
-)
+const posts = (await getCollection("posts", isVisiblePost))
   .sort(sortByDateDesc)
   .slice(0, 5);
 ---
