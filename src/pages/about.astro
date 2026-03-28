@@ -7,7 +7,7 @@ import PageHero from "@components/PageHero.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import Content from "@layouts/Content.astro";
 import Layout from "@layouts/Layout.astro";
-import { CONTACT_EMAIL } from "@utils/date";
+import { CONTACT_EMAIL } from "@utils/config";
 
 const experience = await getCollection("work-experience");
 const companies = experience

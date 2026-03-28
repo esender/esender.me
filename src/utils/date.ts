@@ -1,6 +1,8 @@
-export const CONTACT_EMAIL = "marat@esender.me";
-
-export function isVisiblePost({ data }: { data: { published?: boolean } }): boolean {
+export function isVisiblePost({
+  data,
+}: {
+  data: { published?: boolean };
+}): boolean {
   return import.meta.env.DEV ? true : !!data.published;
 }
 
