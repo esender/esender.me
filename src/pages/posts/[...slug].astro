@@ -23,8 +23,7 @@ const category = entry.data.category.toUpperCase();
 <Layout title={entry.data.title}>
   <Content as="article">
     <MicroLabel>{category}<span class="mx-1.5">&middot;</span>{date}</MicroLabel>
-    <h1>{entry.data.title}</h1>
-    <hr class="border-outline-variant/30 mb-8 mt-2" />
+    <h1 class="mb-10">{entry.data.title}</h1>
     <Body />
   </Content>
 </Layout>

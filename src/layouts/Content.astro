@@ -1,4 +1,9 @@
 ---
+interface Props {
+  class?: string;
+  as?: "div" | "article" | "section";
+}
+
 const { class: className, as: Wrapper = "div" } = Astro.props;
 ---
 

@@ -1,5 +1,9 @@
 export const CONTACT_EMAIL = "marat@esender.me";
 
+export function isVisiblePost({ data }: { data: { published?: boolean } }): boolean {
+  return import.meta.env.DEV ? true : !!data.published;
+}
+
 type DateEntry = { data: { date: Date } };
 
 export function sortByDateDesc(a: DateEntry, b: DateEntry): number {

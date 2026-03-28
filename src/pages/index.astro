@@ -4,12 +4,10 @@ import CTAButton from "@components/CTAButton.astro";
 import MicroLabel from "@components/MicroLabel.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import Layout from "@layouts/Layout.astro";
-import { CONTACT_EMAIL, formatDateShort, sortByDateDesc } from "@utils/date";
+import { CONTACT_EMAIL, formatDateShort, isVisiblePost, sortByDateDesc } from "@utils/date";
 
 const posts = (
-  await getCollection("posts", ({ data }) =>
-    import.meta.env.DEV ? true : data.published
-  )
+  await getCollection("posts", isVisiblePost)
 )
   .sort(sortByDateDesc)
   .slice(0, 5);
@@ -22,10 +20,10 @@ const posts = (
     <h1
       class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-[1.1] mb-6 max-w-3xl"
     >
-      Building <em class="not-italic text-primary">interfaces</em> that disappear
+      Building <span class="text-primary">interfaces</span> that disappear
       into the experience
     </h1>
-    <p class="text-lg lg:text-xl leading-relaxed text-warm-600 max-w-2xl">
+    <p class="text-lg lg:text-xl leading-relaxed text-on-surface-variant max-w-2xl">
       I'm Marat Abdulin, a software engineer at
       <a href="https://taktile.com/">Taktile</a>. I believe the best interfaces are
       the ones you don't notice — they just work, getting out of your way so you can
@@ -117,7 +115,7 @@ const posts = (
   <section class="max-w-7xl mx-auto px-5 sm:px-12 lg:w-10/12 py-section lg:py-section-lg text-center">
     <MicroLabel class="justify-center">Get in Touch</MicroLabel>
     <SectionHeading class="lg:text-5xl mb-6 max-w-2xl mx-auto">
-      Let's build something <em class="not-italic text-primary">together</em>
+      Let's build something <span class="text-primary">together</span>
     </SectionHeading>
     <CTAButton href={`mailto:${CONTACT_EMAIL}`}>
       Say Hello

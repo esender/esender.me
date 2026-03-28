@@ -1,10 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import NavLink from "@layouts/NavLink.astro";
+import { isVisiblePost } from "@utils/date";
 
-const posts = await getCollection("posts", ({ data }) =>
-  import.meta.env.DEV ? true : data.published
-);
+const posts = await getCollection("posts", isVisiblePost);
 ---
 
 <nav class:list={["flex gap-4 font-sans font-medium tracking-tight", "sm:gap-6", "md:gap-10"]}>
