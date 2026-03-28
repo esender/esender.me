@@ -17,16 +17,20 @@
     "@astrojs/rss": "^4.0.17",
     "@fontsource-variable/manrope": "^5.2.8",
     "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/manrope": "^5.2.8",
     "@iconify-json/lucide": "^1.2.98",
     "@iconify-json/simple-icons": "^1.2.74",
     "astro": "^6.0.8",
     "astro-icon": "^1.1.5",
+    "satori": "^0.26.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.10.7",
     "@biomejs/biome": "^2.4.8",
     "@tailwindcss/vite": "^4.2.2",
+    "@types/react": "^19.2.14",
     "typescript": "^5.9.3"
   },
   "engines": {
