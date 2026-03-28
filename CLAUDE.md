@@ -82,7 +82,7 @@ import { sortByDateDesc } from "@utils/date";
 - Always use path aliases (`@layouts/`, `@components/`, `@utils/`) instead of relative imports
 - `DESIGN_SYSTEM.md` is the source of truth for colors, typography, spacing, and border rules — no opaque borders, no pure black text
 - Biome auto-reorders imports when running `npm run check` — expect import order changes in diffs
-- Spacing tokens: `--spacing-section: 5.5rem`, `--spacing-section-lg: 7rem` — use `[5.5rem]`/`[7rem]` arbitrary values in Tailwind
+- Spacing tokens: `--spacing-section: 5.5rem`, `--spacing-section-lg: 7rem` — defined in `src/layouts/base.css` `@theme` block; use `pt-section`, `pb-section`, `py-section`, `pt-section-lg`, etc. as Tailwind utilities (Tailwind v4 auto-generates these from `--spacing-*` theme vars)
 
 ## Content Schema Reference
 
